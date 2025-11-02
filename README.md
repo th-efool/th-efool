@@ -20,6 +20,7 @@ Here are some ideas to get you started:
 <!-- Snake Game Repo View -->
 
 <div align="center">
+  
   ![snake gif](https://github.com/th-efool/th-efool/blob/output/github-snake-dark.svg)
 </div>
 
