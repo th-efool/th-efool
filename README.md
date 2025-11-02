@@ -24,5 +24,5 @@ Here are some ideas to get you started:
 </div>
 
 ## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=alamimran613&theme=radical&no-frame=false&no-bg=false&margin-w=4)
+![](https://github-profile-trophy.vercel.app/?username=th-efool&theme=radical&no-frame=false&no-bg=false&margin-w=4)
 
