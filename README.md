@@ -20,7 +20,7 @@ Here are some ideas to get you started:
 <!-- Snake Game Repo View -->
 
 <div align="center">
-  <img src="https://profile-readme-generator.com/assets/snake.svg" alt="Snake animation" />
+  ![snake gif](https://github.com/th-efool/th-efool/blob/output/github-snake-dark.svg)
 </div>
 
 ## 🏆 GitHub Trophies
