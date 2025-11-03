@@ -17,7 +17,6 @@
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:agrim_s@cy.iitr.ac.in)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/agrimsingh001)
 
-<br/>
 
 ## 💻 Tech Stack
 <!-- Your exact list preserved, just wrapped for layout -->
@@ -69,7 +68,6 @@
 
 </div>
 
-<br/>
 
 ## 📊 GitHub Stats
 <div align="center">
