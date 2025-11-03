@@ -74,16 +74,10 @@
 ## 📊 GitHub Stats
 <div align="center">
 
-<table>
-<tr>
-<td>
-<img src="https://github-readme-stats.vercel.app/api?username=th-efool&theme=dracula&hide_border=false&count_private=true" height="160"/>
-</td>
-<td>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=th-efool&theme=dracula&hide_border=false&layout=compact" height="160"/>
-</td>
-</tr>
-</table>
+<div style="display:flex; gap:10px;">
+  <img src="https://github-readme-stats.vercel.app/api?username=th-efool&theme=dracula&hide_border=true&count_private=true&border_radius=0" height="160" style="border:none;"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=th-efool&theme=dracula&hide_border=true&layout=compact&border_radius=0" height="160" style="border:none;"/>
+</div>
 
 </div>
 
