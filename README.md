@@ -24,11 +24,8 @@ Here are some ideas to get you started:
   ![snake gif](https://github.com/th-efool/th-efool/blob/output/github-snake-dark.svg)
 </div>
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=th-efool&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
 ###
-
 <div align="center">
   
   ![](https://nirzak-streak-stats.vercel.app/?user=th-efool&theme=dracula&hide_border=false)<br/>
