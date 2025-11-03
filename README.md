@@ -72,11 +72,21 @@
 <br/>
 
 ## 📊 GitHub Stats
-<img src="https://github-readme-stats.vercel.app/api?username=th-efool&theme=dracula&hide_border=false&count_private=true" height="160"/>
-<br/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=th-efool&theme=dracula&hide_border=false&layout=compact" height="160"/>
+<div align="center">
 
-<br/>
+<table>
+<tr>
+<td>
+<img src="https://github-readme-stats.vercel.app/api?username=th-efool&theme=dracula&hide_border=false&count_private=true" height="160"/>
+</td>
+<td>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=th-efool&theme=dracula&hide_border=false&layout=compact" height="160"/>
+</td>
+</tr>
+</table>
+
+</div>
+
 
 ### 🔝 Top Contributed Repo
 <img src="https://github-contributor-stats.vercel.app/api?username=th-efool&limit=5&theme=dark&combine_all_yearly_contributions=true" />
