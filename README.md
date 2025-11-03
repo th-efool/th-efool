@@ -73,6 +73,11 @@
 <div align="center">
 
 <div style="display:flex; gap:10px;">
+  <img height="158em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=th-efool&theme=dracula">
+<img height="158em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=th-efool&theme=dracula">
+<img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=th-efool&theme=dracula">
+<img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=th-efool&theme=dracula">
+<img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=th-efool&theme=dracula&utcOffset=8">
   <img src="https://github-readme-stats.vercel.app/api?username=th-efool&theme=dracula&hide_border=true&count_private=true&border_radius=0" height="160" style="border:none;"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=th-efool&theme=dracula&hide_border=true&layout=compact&border_radius=0" height="160" style="border:none;"/>
 </div>
