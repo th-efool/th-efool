@@ -2,10 +2,6 @@
 
 <!-- Snake animation -->
 <img src="https://github.com/th-efool/th-efool/blob/output/github-snake-dark.svg" width="100%" />
-
-<br/><br/>
-
-
 ###
 <div align="center">
   
