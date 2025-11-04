@@ -15,6 +15,7 @@
 </picture>
 
 <style>
+  
 @media (prefers-color-scheme: light) {
   .theme-image {
     content: url("https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-light.svg?v=1");
@@ -30,6 +31,7 @@
     content: url("https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg?v=1");
   }
 }
+  
 </style>
 
 </div>
