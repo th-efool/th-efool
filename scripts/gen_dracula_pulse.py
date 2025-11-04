@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import requests, datetime, math
+import os, requests, datetime, math
 
 GITHUB_USER = "th-efool"
 
@@ -31,12 +31,16 @@ query ($login: String!) {
 }
 """
 
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"bearer {os.getenv('GITHUB_TOKEN')}"
+}
+
 resp = requests.post(
     "https://api.github.com/graphql",
     json={"query": query, "variables": {"login": GITHUB_USER}},
-    headers={"Content-Type": "application/json"}
+    headers=headers
 )
-
 if resp.status_code != 200:
     raise SystemExit(f"GitHub API error: {resp.text}")
 
