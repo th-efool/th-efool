@@ -1,0 +1,34 @@
+name: Heartbeat Contribution Grid
+
+on:
+  schedule: [ { cron: "0 0 * * *" } ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - run: pip install requests
+
+      - name: Generate heartbeat grid
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/gen_heartbeat_grid.py
+
+      - name: Publish SVG
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: heartbeat-grid
+          force_orphan: true
