@@ -1,4 +1,4 @@
-import os, requests, math, random
+import os, requests
 
 GITHUB_USER = "th-efool"
 
@@ -15,13 +15,21 @@ PALETTE = [
 THRESHOLDS = [0,1,2,4,8,12,20]
 
 TH_EFOOL_MASK_BASE = {
+    # T
     (0,0),(1,0),(2,0),(1,1),(1,2),(1,3),(1,4),
+    # H
     (4,0),(4,1),(4,2),(4,3),(4,4),(5,2),(6,0),(6,1),(6,2),(6,3),(6,4),
+    # -
     (8,2),(9,2),(10,2),
+    # E
     (12,0),(12,1),(12,2),(12,3),(12,4),(13,0),(14,0),(14,1),(14,2),(13,4),(14,4),
+    # F
     (16,0),(16,1),(16,2),(16,3),(16,4),(17,0),(18,0),(18,1),(18,2),
+    # O
     (20,1),(20,2),(20,3),(21,0),(21,4),(22,1),(22,2),(22,3),
+    # O
     (24,1),(24,2),(24,3),(25,0),(25,4),(26,1),(26,2),(26,3),
+    # L
     (28,0),(28,1),(28,2),(28,3),(28,4),(29,4),(30,4)
 }
 
@@ -44,7 +52,8 @@ query ($login: String!) {
 """
 
 token = os.getenv("GITHUB_TOKEN")
-if not token: raise SystemExit("Missing GITHUB_TOKEN")
+if not token:
+    raise SystemExit("Missing GITHUB_TOKEN")
 
 resp = requests.post(
     "https://api.github.com/graphql",
@@ -63,18 +72,18 @@ CELL, GAP = 14, 3
 W = len(weeks) * (CELL + GAP)
 H = 7 * (CELL + GAP)
 
-SUBDIV = 2
+SUBDIV = 2                        # 4x4 microgrid
 micro = CELL // SUBDIV
 micro_gap = GAP / SUBDIV
 
-SPARK_PROB = 0.04
-
-def intensity(c):
+def intensity(count):
     for i, th in enumerate(THRESHOLDS):
-        if c < th: return PALETTE[i-1]
+        if count < th:
+            return PALETTE[i-1]
     return PALETTE[-1]
 
-svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">']
+svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
+       f'fill="none" xmlns="http://www.w3.org/2000/svg">']
 
 svg.append("""
 <style>
@@ -83,56 +92,23 @@ svg.append("""
   92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
   96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
 }
-
-@keyframes spark {
-  0%   { fill: inherit; }
-  6%   { fill: rgba(114,203,233,0.65); filter: drop-shadow(0 0 4px rgba(114,203,233,0.8)); }
-  16%  { fill: #72cbe9; filter: drop-shadow(0 0 7px rgba(114,203,233,1)); }
-  32%  { fill: rgba(114,203,233,0.35); filter: none; }
-  100% { fill: inherit; filter: none; }
-}
-
 .cell {
   shape-rendering:crispEdges;
-  animation: pulse 2s infinite linear;
-}
-
-.spark {
-  animation: pulse 2s infinite linear, spark 4.8s infinite ease-in-out;
-  animation-delay: var(--d), calc(var(--d) * 0.35);
-}
-
-.noise {
-  mix-blend-mode: screen;
   animation:pulse 2s infinite linear;
 }
 </style>
 """)
 
-def hash(v):
-    v = math.sin(v*12.9898)*43758.5453
-    return v - math.floor(v)
-
-def noise2d(x, y):
-    i, j = int(x), int(y)
-    fx, fy = x-i, y-j
-    a = hash(i + j*57)
-    b = hash(i+1 + j*57)
-    c = hash(i + (j+1)*57)
-    d = hash(i+1 + (j+1)*57)
-    u = fx*fx*(3-2*fx)
-    v = fy*fy*(3-2*fy)
-    return (a*(1-u)*(1-v) + b*u*(1-v) + c*(1-u)*v + d*u*v)
-
-cx = (min(x for x,_ in TH_EFOOL_MASK) + max(x for x,_ in TH_EFOOL_MASK)) / 2
-cy = (min(y for _,y in TH_EFOOL_MASK) + max(y for _,y in TH_EFOOL_MASK)) / 2
-
 for x, week in enumerate(weeks):
     for y, day in enumerate(week["contributionDays"]):
-        fill = intensity(day["contributionCount"])
+        c = day["contributionCount"]
+        fill = intensity(c)
         delay = (x * 7 + y) * 0.0113
-        is_mask = (x, y) in TH_EFOOL_MASK
 
+        is_mask = (x, y) in TH_EFOOL_MASK
+        stroke_tag = 'stroke="white" stroke-width="1.2"' if is_mask else ""
+
+        # micro-pixels
         baseX = x*(CELL+GAP)
         baseY = y*(CELL+GAP)
 
@@ -140,45 +116,15 @@ for x, week in enumerate(weeks):
             for j in range(SUBDIV):
                 px = baseX + i*(micro+micro_gap)
                 py = baseY + j*(micro+micro_gap)
-
-                cls = "cell" if random.random() >= SPARK_PROB else "spark"
-
                 svg.append(
-                    f'<rect class="{cls}" x="{px}" y="{py}" width="{micro}" height="{micro}" '
-                    f'fill="{fill}" style="--d:{delay}s" />'
+                    f'<rect class="cell" x="{px}" y="{py}" width="{micro}" height="{micro}" '
+                    f'fill="{fill}" style="animation-delay:{delay}s" />'
                 )
 
         if is_mask:
             svg.append(
                 f'<rect x="{baseX}" y="{baseY}" width="{CELL}" height="{CELL}" '
-                f'stroke="white" stroke-width="1.2" fill="none"/>'
-            )
-
-# 🔥 glow only inside TH-E FOOL region
-scale = 0.18
-falloff = 0.9
-
-for (x, y) in TH_EFOOL_MASK:
-    t = weeks[x]["contributionDays"][y]["contributionCount"]
-    base = intensity(t)
-
-    baseX = x*(CELL+GAP)
-    baseY = y*(CELL+GAP)
-    d = math.sqrt((x-cx)**2 + (y-cy)**2)
-    mask = math.exp(-d*falloff)
-
-    for i in range(SUBDIV):
-        for j in range(SUBDIV):
-            px = baseX + i*(micro+micro_gap)
-            py = baseY + j*(micro+micro_gap)
-
-            n = noise2d(x*scale + i*0.3, y*scale + j*0.3)
-            a = max(0, n * mask * 0.55)
-            if a < 0.02: continue
-
-            svg.append(
-                f'<rect class="noise" x="{px}" y="{py}" width="{micro}" height="{micro}" '
-                f'fill="{base[:-1]},{a:.3f})"/>'
+                f'fill="none" {stroke_tag}/>'
             )
 
 svg.append("</svg>")
@@ -187,4 +133,4 @@ os.makedirs("dist", exist_ok=True)
 with open("dist/heartbeat-dracula.svg","w") as f:
     f.write("\n".join(svg))
 
-print("✅ SVG generated — neural glow only inside TH-E FOOL")
+print("✅ SVG generated: dist/heartbeat-dracula.svg")
