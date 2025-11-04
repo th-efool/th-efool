@@ -5,15 +5,18 @@ GITHUB_USER = "th-efool"
 
 # Dracula intensity palette (low → high)
 # 0 commit uses background tone internally
+
+
 DRACULA_PALETTE = [
-    "#0d1117",        # 0 commits - background (dracula's dark theme)
-    "#79dafa",        # 1+ Cyan (light)
-    "#5bb5c5",        # 2+ Cyan (darker shade)
-    "#ff6e96",        # 4+ Pinkish Red (base commit color)
-    "#f25e82",        # 8+ Pinkish Red (darker, muted)
-    "#d98ba5",        # 12+ Muted Pink (subtle gradient)
-    "#ff4551"       # 20+ Red (more subtle, faded)
+    "#0d1117",        # 0 commits - Background (dark theme)
+    "rgba(255, 110, 150, 0.15)",  # 1+ Commit: very faint pinkish shade
+    "rgba(255, 110, 150, 0.22)",  # 2+ Commit: slightly more visible
+    "rgba(255, 110, 150, 0.35)",  # 4+ Commit: subtle pinkish tone
+    "rgba(255, 110, 150, 0.55)",  # 8+ Commit: muted but noticeable
+    "rgba(255, 110, 150, 0.75)",  # 16+ Commit: strong, but still soft
+    "#ff6e96",        # 20+ Commit: full intensity pink
 ]
+
 
 # commit thresholds matching palette indexes
 THRESHOLDS = [0,1,2,4,8,12,20]
