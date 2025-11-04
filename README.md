@@ -83,7 +83,6 @@
 <img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=th-efool&theme=dracula&utcOffset=8">
   <img src="https://github-readme-stats.vercel.app/api?username=th-efool&theme=dracula&hide_border=true&count_private=true&border_radius=0" height="160" style="border:none;"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=th-efool&theme=dracula&hide_border=true&layout=compact&border_radius=0" height="160" style="border:none;"/>
-<img src="https://raw.githubusercontent.com/th-efool/th-efool/heartbeat/heartbeat.svg" height="160" />
 </div>
 
 </div>
