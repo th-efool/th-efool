@@ -1,42 +1,19 @@
 <div align="center">
 
-
-<!-- Wave Dracula Contribution GRID animation -->
+<!-- Snake animation -->
 <picture>
+  <source
+    media="(min-width: 500px) and (pointer: fine)"
+    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg"
+  />
   <img
-    src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg?v=1"
+    src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg"
     width="100%"
     loading="lazy"
     decoding="async"
     style="display:block;"
-    alt="GitHub Pulse Visualization"
-    class="theme-image"
   />
 </picture>
-
-<style>
-  
-@media (prefers-color-scheme: light) {
-  .theme-image {
-    content: url("https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-light.svg?v=1");
-  }
-}
-@media (max-width: 500px) and (prefers-color-scheme: light) {
-  .theme-image {
-    content: url("https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-light-mobile.svg?v=1");
-  }
-}
-@media (max-width: 500px) and (prefers-color-scheme: dark) {
-  .theme-image {
-    content: url("https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg?v=1");
-  }
-}
-  
-</style>
-
-</div>
-
-
 
 
 ###
