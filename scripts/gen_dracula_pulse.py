@@ -16,7 +16,7 @@ BASE_PERIOD = 2.0
 JITTER_SCALE = 0.35
 
 OUT_DIR = Path("dist")
-OUT = OUT_DIR / "heartbeat-grid.svg"
+OUT = OUT_DIR / "dracula-pulse.svg"
 
 # Dracula-ish palette for tiers 0..4 (level0 is darkest background)
 PALETTE = [
