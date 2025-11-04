@@ -67,12 +67,11 @@ SUBDIV = 2
 micro = CELL // SUBDIV
 micro_gap = GAP / SUBDIV
 
-SPARK_PROB = 0.04  # neuron fire probability (~4%)
+SPARK_PROB = 0.04
 
 def intensity(c):
     for i, th in enumerate(THRESHOLDS):
-        if c < th:
-            return PALETTE[i-1]
+        if c < th: return PALETTE[i-1]
     return PALETTE[-1]
 
 svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">']
@@ -110,14 +109,13 @@ svg.append("""
 </style>
 """)
 
-# -------- Neural noise --------
 def hash(v):
     v = math.sin(v*12.9898)*43758.5453
     return v - math.floor(v)
 
 def noise2d(x, y):
     i, j = int(x), int(y)
-    fx, fy = x - i, y - j
+    fx, fy = x-i, y-j
     a = hash(i + j*57)
     b = hash(i+1 + j*57)
     c = hash(i + (j+1)*57)
@@ -129,7 +127,6 @@ def noise2d(x, y):
 cx = (min(x for x,_ in TH_EFOOL_MASK) + max(x for x,_ in TH_EFOOL_MASK)) / 2
 cy = (min(y for _,y in TH_EFOOL_MASK) + max(y for _,y in TH_EFOOL_MASK)) / 2
 
-# -------- Grid draw --------
 for x, week in enumerate(weeks):
     for y, day in enumerate(week["contributionDays"]):
         fill = intensity(day["contributionCount"])
@@ -144,9 +141,7 @@ for x, week in enumerate(weeks):
                 px = baseX + i*(micro+micro_gap)
                 py = baseY + j*(micro+micro_gap)
 
-                cls = "cell"
-                if random.random() < SPARK_PROB:
-                    cls = "spark"
+                cls = "cell" if random.random() >= SPARK_PROB else "spark"
 
                 svg.append(
                     f'<rect class="{cls}" x="{px}" y="{py}" width="{micro}" height="{micro}" '
@@ -156,33 +151,35 @@ for x, week in enumerate(weeks):
         if is_mask:
             svg.append(
                 f'<rect x="{baseX}" y="{baseY}" width="{CELL}" height="{CELL}" '
-                f'fill="none" stroke="white" stroke-width="1.2"/>'
+                f'stroke="white" stroke-width="1.2" fill="none"/>'
             )
 
-# -------- Neural glow overlay --------
+# 🔥 glow only inside TH-E FOOL region
 scale = 0.18
 falloff = 0.9
-for x in range(len(weeks)):
-    for y in range(7):
-        baseX = x*(CELL+GAP)
-        baseY = y*(CELL+GAP)
 
-        d = math.sqrt((x-cx)**2 + (y-cy)**2)
-        mask = math.exp(-d*falloff)
+for (x, y) in TH_EFOOL_MASK:
+    t = weeks[x]["contributionDays"][y]["contributionCount"]
+    base = intensity(t)
 
-        for i in range(SUBDIV):
-            for j in range(SUBDIV):
-                px = baseX + i*(micro+micro_gap)
-                py = baseY + j*(micro+micro_gap)
+    baseX = x*(CELL+GAP)
+    baseY = y*(CELL+GAP)
+    d = math.sqrt((x-cx)**2 + (y-cy)**2)
+    mask = math.exp(-d*falloff)
 
-                n = noise2d(x*scale + i*0.3, y*scale + j*0.3)
-                a = max(0, n * mask * 0.45)
-                if a < 0.02: continue
+    for i in range(SUBDIV):
+        for j in range(SUBDIV):
+            px = baseX + i*(micro+micro_gap)
+            py = baseY + j*(micro+micro_gap)
 
-                svg.append(
-                    f'<rect class="noise" x="{px}" y="{py}" width="{micro}" height="{micro}" '
-                    f'fill="rgba(255,110,150,{a:.3f})"/>'
-                )
+            n = noise2d(x*scale + i*0.3, y*scale + j*0.3)
+            a = max(0, n * mask * 0.55)
+            if a < 0.02: continue
+
+            svg.append(
+                f'<rect class="noise" x="{px}" y="{py}" width="{micro}" height="{micro}" '
+                f'fill="{base[:-1]},{a:.3f})"/>'
+            )
 
 svg.append("</svg>")
 
@@ -190,4 +187,4 @@ os.makedirs("dist", exist_ok=True)
 with open("dist/heartbeat-dracula.svg","w") as f:
     f.write("\n".join(svg))
 
-print("✅ SVG generated with neural sparks: dist/heartbeat-dracula.svg")
+print("✅ SVG generated — neural glow only inside TH-E FOOL")
