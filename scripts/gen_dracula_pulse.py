@@ -1,4 +1,4 @@
-import os, requests, cmath
+import os, requests, cmath, math
 
 GITHUB_USER = "th-efool"
 
@@ -14,7 +14,6 @@ PALETTE = [
 
 THRESHOLDS = [0,1,2,4,8,12,20]
 
-# TH-EFOOL mask
 TH_EFOOL_MASK_BASE = {
     (0,0),(1,0),(2,0),(1,1),(1,2),(1,3),(1,4),
     (4,0),(4,1),(4,2),(4,3),(4,4),(5,2),(6,0),(6,1),(6,2),(6,3),(6,4),
@@ -26,7 +25,6 @@ TH_EFOOL_MASK_BASE = {
     (28,0),(28,1),(28,2),(28,3),(28,4),(29,4),(30,4)
 }
 
-# GraphQL query
 query = """
 query ($login: String!) {
   user(login: $login) {
@@ -34,7 +32,9 @@ query ($login: String!) {
       contributionCalendar {
         weeks {
           contributionDays {
-            date weekday contributionCount
+            date
+            weekday
+            contributionCount
           }
         }
       }
@@ -50,7 +50,7 @@ if not token:
 resp = requests.post(
     "https://api.github.com/graphql",
     json={"query": query, "variables": {"login": GITHUB_USER}},
-    headers={"Authorization": f"bearer ${token}"}
+    headers={"Authorization": f"bearer {token}"}
 ).json()
 
 weeks = resp["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
@@ -61,105 +61,90 @@ x_offset = (calendar_width - mask_width) // 2
 TH_EFOOL_MASK = {(x + x_offset, y + 1) for (x, y) in TH_EFOOL_MASK_BASE}
 
 CELL, GAP = 14, 3
-W = len(weeks) * (CELL + GAP)
-H = 7 * (CELL + GAP)
+W = len(weeks)*(CELL+GAP)
+H = 7*(CELL+GAP)
 
 SUBDIV = 2
-micro = CELL / SUBDIV
-micro_gap = 0
+micro = CELL//SUBDIV
+micro_gap = GAP/SUBDIV
 
-def intensity(v):
+def intensity(count):
     for i, th in enumerate(THRESHOLDS):
-        if v < th:
+        if count < th:
             return PALETTE[i-1]
     return PALETTE[-1]
 
-# Julia settings
-C = complex(-0.7, 0.27015)
-MAX_IT = 18
-J_COLOR = "#79dafa"
+# -------- Julia fractal field --------
+c = complex(-0.70176, -0.3842)
+max_iter = 28
 
 def julia_val(nx, ny):
-    # remap pixel -> complex plane, centered
-    z = complex((nx - 0.5)*2.2, (ny - 0.5)*2.2)
-    for k in range(MAX_IT):
-        z = z*z + C
-        if abs(z) > 2:
-            return k / MAX_IT
-    return 1
+    # map canvas coords -> complex plane
+    zx = 1.4*(nx/W - 0.5)
+    zy = 1.4*(ny/H - 0.5)
+    z = complex(zx, zy)
+    for i in range(max_iter):
+        z = z*z + c
+        if abs(z) > 2: 
+            return i / max_iter
+    return 1.0
 
-svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">']
+def mix(a,b,t): return a + (b-a)*t
 
-# CSS
+def julia_color(alpha):
+    # base fractal cyan #79dafa blended to your pink #ff6e96
+    r1,g1,b1 = (0x79,0xda,0xfa)
+    r2,g2,b2 = (0xff,0x6e,0x96)
+    t = alpha*0.9
+    return f"rgba({int(mix(r1,r2,t))},{int(mix(g1,g2,t))},{int(mix(b1,b2,t))},{alpha:.3f})"
+
+svg = [
+    f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">'
+]
+
 svg.append("""
 <style>
-svg { shape-rendering:crispEdges; }
 @keyframes pulse {
   0%,100% { opacity:1; filter:drop-shadow(0 0 2px currentColor); }
   92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
   96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
 }
-@keyframes juliaBreath {
-  0%,100% { opacity: .10 }
-  50% { opacity: .32 }
-}
-.cell {
-  animation:pulse 2s infinite linear;
-}
-.jl {
-  mix-blend-mode:screen;
-  animation:juliaBreath 5.5s ease-in-out infinite;
-}
+.cell{shape-rendering:crispEdges;animation:pulse 2s infinite linear;}
+.jf {shape-rendering:crispEdges;animation:pulse 2s infinite linear;}
 </style>
 """)
 
-# ---------------- GRID ----------------
 for x, week in enumerate(weeks):
     for y, day in enumerate(week["contributionDays"]):
-        fill = intensity(day["contributionCount"])
-        d = (x * 7 + y) * 0.0113
-        is_mask = (x, y) in TH_EFOOL_MASK
-
         baseX = x*(CELL+GAP)
         baseY = y*(CELL+GAP)
+        fill = intensity(day["contributionCount"])
+        delay = (x*7+y)*0.0113
+        is_mask = (x,y) in TH_EFOOL_MASK
 
+        # micro-pixels
         for i in range(SUBDIV):
             for j in range(SUBDIV):
-                px = baseX + i*micro
-                py = baseY + j*micro
+                px = baseX + i*(micro+micro_gap)
+                py = baseY + j*(micro+micro_gap)
                 svg.append(
-                    f'<rect class="cell" x="{px}" y="{py}" width="{micro}" height="{micro}" '
-                    f'fill="{fill}" style="animation-delay:{d}s"/>'
+                    f'<rect class="cell" x="{px}" y="{py}" width="{micro}" height="{micro}" fill="{fill}" style="animation-delay:{delay}s"/>'
                 )
+
+                # fractal overlay
+                nx = px + micro*0.5
+                ny = py + micro*0.5
+                a = julia_val(nx, ny)
+                if a > 0.05:
+                    col = julia_color(a*0.65)
+                    svg.append(
+                        f'<rect class="jf" x="{px}" y="{py}" width="{micro}" height="{micro}" fill="{col}" style="animation-delay:{delay}s"/>'
+                    )
 
         if is_mask:
-            svg.append(f'<rect x="{baseX}" y="{baseY}" width="{CELL}" height="{CELL}" '
-                       f'fill="none" stroke="white" stroke-width="1.2"/>')
-
-# ------------- JULIA OVERLAY -------------
-for x, week in enumerate(weeks):
-    for y in range(7):
-        baseX = x*(CELL+GAP)
-        baseY = y*(CELL+GAP)
-
-        for i in range(SUBDIV):
-            for j in range(SUBDIV):
-                px = baseX + i*micro
-                py = baseY + j*micro
-
-                nx = (px / W)
-                ny = (py / H)
-                t = julia_val(nx, ny)
-
-                if t < 0.15:
-                    continue
-
-                op = round(0.42 * t, 3)
-
-                svg.append(
-                    f'<rect class="jl" x="{px}" y="{py}" width="{micro}" height="{micro}" '
-                    f'fill="{J_COLOR}" fill-opacity="{op}"/>'
-                )
+            svg.append(
+                f'<rect x="{baseX}" y="{baseY}" width="{CELL}" height="{CELL}" fill="none" stroke="white" stroke-width="1.2"/>'
+            )
 
 svg.append("</svg>")
 
@@ -167,4 +152,4 @@ os.makedirs("dist", exist_ok=True)
 with open("dist/heartbeat-dracula.svg","w") as f:
     f.write("\n".join(svg))
 
-print("✅ SVG generated with Julia overlay ✨")
+print("✅ SVG generated: dist/heartbeat-dracula.svg (Julia pulse overlay)")
