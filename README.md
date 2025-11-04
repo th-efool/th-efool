@@ -2,7 +2,8 @@
 
 <!-- Snake animation -->
 <img src="https://github.com/th-efool/th-efool/blob/output/github-snake-dark.svg" width="100%" />
-![heartbeat](https://raw.githubusercontent.com/th-efool/th-efool/heartbeat/heartbeat.svg)
+<img src="https://raw.githubusercontent.com/th-efool/th-efool/heartbeat/heartbeat.svg" width="100%" />
+
 
 
 ###
