@@ -105,16 +105,31 @@ svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
 
 svg.append("""
 <style>
-@keyframes pulse {
-  0%,100% { opacity:1; filter:drop-shadow(0 0 2px currentColor); }
-  92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
-  96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
+@keyframes spark {
+  0%   { opacity: 0.85; filter: drop-shadow(0 0 1px currentColor); }
+  5%   { opacity: 1; filter: drop-shadow(0 0 8px currentColor); }
+  15%  { opacity: 0.55; filter: drop-shadow(0 0 3px currentColor); }
+  25%  { opacity: 0.95; filter: drop-shadow(0 0 5px currentColor); }
+  40%  { opacity: 0.50; filter: drop-shadow(0 0 1px currentColor); }
+  100% { opacity: 0.80; filter: drop-shadow(0 0 2px currentColor); }
 }
+
+@keyframes ripple {
+  0%   { opacity: 0.9; }
+  60%  { opacity: 0.4; }
+  100% { opacity: 0.85; }
+}
+
 .cell {
-  shape-rendering:crispEdges;
-  animation:pulse 2s infinite linear;
+  shape-rendering: crispEdges;
+  animation: ripple 3.5s infinite cubic-bezier(.4,0,.2,1);
+}
+
+.maskCell {
+  animation: spark 1.8s infinite ease-in-out;
 }
 </style>
+
 """)
 
 for x, week in enumerate(weeks):
@@ -122,15 +137,20 @@ for x, week in enumerate(weeks):
         c = day["contributionCount"]
         fill = intensity(c)
         delay = (x * 7 + y) * 0.0113
-        stroke = 'stroke="white" stroke-width="1.2"' if (x, y) in TH_EFOOL_MASK else ""
+
+        is_sig = (x, y) in TH_EFOOL_MASK
+        css_class = "maskCell" if is_sig else "cell"
 
         svg.append(
-            f'<rect class="cell" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
-            f'width="{CELL}" height="{CELL}" fill="{fill}" {stroke} '
+            f'<rect class="{css_class}" '
+            f'x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
+            f'width="{CELL}" height="{CELL}" '
+            f'fill="{fill}" '
             f'style="animation-delay:{delay}s"/>'
         )
 
 svg.append("</svg>")
+
 
 os.makedirs("dist", exist_ok=True)
 with open("dist/heartbeat-dracula.svg","w") as f:
