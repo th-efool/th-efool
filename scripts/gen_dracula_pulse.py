@@ -13,9 +13,9 @@ PALETTE = [
 ]
 THRESHOLDS = [0,1,2,4,8,12,20]
 
-# Roboto-ish TH-EFOOL mask (grid coords)
+# Roboto-ish TH-EFOOL pixel mask (base coordinates, no centering, no shifting yet)
 TH_EFOOL_MASK_BASE = {
-    # T
+    # T (Roboto)
     (0,0),(1,0),(2,0),
     (1,1),(1,2),(1,3),(1,4),
 
@@ -81,17 +81,13 @@ resp = requests.post(
     headers={"Authorization": f"bearer {token}"}
 ).json()
 
-try:
-    weeks = resp["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-except Exception as e:
-    print("❌ GitHub API error\n", resp)
-    raise
-
+weeks = resp["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
 calendar_width = len(weeks)
+
 mask_width = max(x for x,_ in TH_EFOOL_MASK_BASE) + 1
 x_offset = (calendar_width - mask_width) // 2
 
-# final mask: centered + shifted down by 1 row
+# 👉 final mask: centered + shifted DOWN by 1
 TH_EFOOL_MASK = {(x + x_offset, y + 1) for (x, y) in TH_EFOOL_MASK_BASE}
 
 CELL, GAP = 14, 3
@@ -109,31 +105,14 @@ svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
 
 svg.append("""
 <style>
-@keyframes spark {
-  0%   { opacity: .85; filter: drop-shadow(0 0 1px currentColor); }
-  6%   { opacity: 1; filter: drop-shadow(0 0 8px currentColor); }
-  15%  { opacity: .45; filter: drop-shadow(0 0 3px currentColor); }
-  28%  { opacity: .95; filter: drop-shadow(0 0 6px currentColor); }
-  40%  { opacity: .55; filter: drop-shadow(0 0 1px currentColor); }
-  100% { opacity: .82; filter: drop-shadow(0 0 2px currentColor); }
+@keyframes pulse {
+  0%,100% { opacity:1; filter:drop-shadow(0 0 2px currentColor); }
+  92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
+  96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
 }
-
-@keyframes ripple {
-  0%   { opacity: .95; }
-  60%  { opacity: .45; }
-  100% { opacity: .90; }
-}
-
 .cell {
-  shape-rendering: crispEdges;
-  animation: ripple 3.5s infinite cubic-bezier(.4,0,.2,1);
-}
-
-.maskCell {
-  shape-rendering: crispEdges;
-  animation: spark 1.8s infinite ease-in-out;
-  stroke: white;
-  stroke-width: 1.2;
+  shape-rendering:crispEdges;
+  animation:pulse 2s infinite linear;
 }
 </style>
 """)
@@ -143,14 +122,11 @@ for x, week in enumerate(weeks):
         c = day["contributionCount"]
         fill = intensity(c)
         delay = (x * 7 + y) * 0.0113
-
-        css_class = "maskCell" if (x, y) in TH_EFOOL_MASK else "cell"
+        stroke = 'stroke="white" stroke-width="1.2"' if (x, y) in TH_EFOOL_MASK else ""
 
         svg.append(
-            f'<rect class="{css_class}" '
-            f'x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
-            f'width="{CELL}" height="{CELL}" '
-            f'fill="{fill}" '
+            f'<rect class="cell" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
+            f'width="{CELL}" height="{CELL}" fill="{fill}" {stroke} '
             f'style="animation-delay:{delay}s"/>'
         )
 
