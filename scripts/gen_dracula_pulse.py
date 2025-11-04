@@ -13,9 +13,9 @@ PALETTE = [
 ]
 THRESHOLDS = [0,1,2,4,8,12,20]
 
-# Roboto-ish TH-EFOOL pixel mask
-TH_EFOOL_MASK = {
-    # T (Roboto style)
+# Roboto-ish TH-EFOOL pixel mask (base coordinates, no centering, no shifting yet)
+TH_EFOOL_MASK_BASE = {
+    # T (Roboto)
     (0,0),(1,0),(2,0),
     (1,1),(1,2),(1,3),(1,4),
 
@@ -53,10 +53,6 @@ TH_EFOOL_MASK = {
     (29,4),(30,4)
 }
 
-# Build shifted mask (center + push down 1 row)
-MASK_SHIFTED = {(x + x_offset, y + 1) for (x, y) in TH_EFOOL_MASK}
-
-TH_EFOOL_MASK = MASK_SHIFTED
 query = """
 query ($login: String!) {
   user(login: $login) {
@@ -86,13 +82,13 @@ resp = requests.post(
 ).json()
 
 weeks = resp["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-
 calendar_width = len(weeks)
-mask_width = max(x for x, _ in TH_EFOOL_MASK) + 1
+
+mask_width = max(x for x,_ in TH_EFOOL_MASK_BASE) + 1
 x_offset = (calendar_width - mask_width) // 2
 
-# build shifted mask
-MASK_SHIFTED = {(x + x_offset, y) for (x, y) in TH_EFOOL_MASK}
+# 👉 final mask: centered + shifted DOWN by 1
+TH_EFOOL_MASK = {(x + x_offset, y + 1) for (x, y) in TH_EFOOL_MASK_BASE}
 
 CELL, GAP = 14, 3
 W = len(weeks) * (CELL + GAP)
@@ -118,10 +114,6 @@ svg.append("""
   shape-rendering:crispEdges;
   animation:pulse 2s infinite linear;
 }
-.textStroke {
-  stroke:white;
-  stroke-width:1.1;
-}
 </style>
 """)
 
@@ -129,10 +121,8 @@ for x, week in enumerate(weeks):
     for y, day in enumerate(week["contributionDays"]):
         c = day["contributionCount"]
         fill = intensity(c)
-
         delay = (x * 7 + y) * 0.0113
-        is_sig = (x, y) in MASK_SHIFTED
-        stroke = 'stroke="white" stroke-width="1.2"' if is_sig else ""
+        stroke = 'stroke="white" stroke-width="1.2"' if (x, y) in TH_EFOOL_MASK else ""
 
         svg.append(
             f'<rect class="cell" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
