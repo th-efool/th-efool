@@ -1,21 +1,32 @@
 #!/usr/bin/env python3
-import requests, datetime, os, random
+import os, requests, math
 
-TOKEN = os.environ.get("GH_TOKEN")
-USERNAME = "th-efool"
+GITHUB_USER = "th-efool"
 
-API = "https://api.github.com/graphql"
-headers = {"Authorization": f"Bearer {TOKEN}"}
+# Dracula intensity palette (low → high)
+# 0 commit uses background tone internally
+DRACULA_PALETTE = [
+    "#282A36", # 0 commits - bg visible
+    "#8be9fd", # 1+ Cyan
+    "#50fa7b", # 2+ Green
+    "#ffb86c", # 4+ Orange
+    "#ff79c6", # 8+ Pink
+    "#bd93f9", # 12+ Purple
+    "#ff5555"  # 20+ Red
+]
+
+# commit thresholds matching palette indexes
+THRESHOLDS = [0,1,2,4,8,12,20]
 
 query = """
-query($user:String!) {
-  user(login:$user) {
+query ($login: String!) {
+  user(login: $login) {
     contributionsCollection {
       contributionCalendar {
         weeks {
           contributionDays {
-            weekday
             date
+            weekday
             contributionCount
           }
         }
@@ -25,76 +36,73 @@ query($user:String!) {
 }
 """
 
-res = requests.post(API, json={"query": query, "variables": {"user": USERNAME}}, headers=headers)
-data = res.json()
+token = os.getenv("GITHUB_TOKEN")
+if not token:
+    raise SystemExit("❌ Missing GITHUB_TOKEN")
 
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"bearer {token}"
+}
+
+resp = requests.post(
+    "https://api.github.com/graphql",
+    json={"query": query, "variables": {"login": GITHUB_USER}},
+    headers=headers
+)
+
+data = resp.json()
 if "errors" in data:
     print(data)
     exit(1)
 
 weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+days = [d for w in weeks for d in w["contributionDays"]]
 
-# 6-level dracula neon palette
-LEVEL_COLORS = [
-    "#8be9fd", # Cyan
-    "#50fa7b", # Green
-    "#ffb86c", # Orange
-    "#ff79c6", # Pink
-    "#bd93f9", # Purple
-    "#ff5555"  # Red
-]
-
-# thresholds for each level
-THRESHOLDS = [1,2,4,8,12,20]
+CELL, GAP = 14, 3
+W = len(weeks) * (CELL + GAP)
+H = 7 * (CELL + GAP)
 
 def color_for(count):
-    for i,th in reversed(list(enumerate(THRESHOLDS))):
-        if count >= th:
-            return LEVEL_COLORS[i]
-    return "none"
+    for i, th in enumerate(THRESHOLDS):
+        if count < th: return DRACULA_PALETTE[i-1]
+    return DRACULA_PALETTE[-1]
 
-# --- SVG parameters ---
-cell = 12
-pad = 3
-bg = "#0d1117"  # github background
-width = len(weeks) * (cell + pad)
-height = 7 * (cell + pad)
+svg = []
+svg.append(f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">')
 
-svg = [
-f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">',
-f'<rect width="100%" height="100%" fill="{bg}" />',
-'<style>',
-"""
-@keyframes flicker {
+svg.append("""
+<style>
+@keyframes neonFlicker {
   0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px currentColor); }
-  92% { opacity: 0.75; filter: drop-shadow(0 0 6px currentColor); }
+  92% { opacity: 0.8; filter: drop-shadow(0 0 6px currentColor); }
   95% { opacity: 0.4; filter: drop-shadow(0 0 1px currentColor); }
 }
-""",
-'</style>'
-]
+.rect {
+  shape-rendering: crispEdges;
+  animation: neonFlicker 1.85s infinite linear;
+}
+</style>
+""")
 
-for x,week in enumerate(weeks):
-    for day in week["contributionDays"]:
-        count = day["contributionCount"]
-        if count == 0:
-            continue
-        
-        c = color_for(count)
-        y = day["weekday"] * (cell + pad)
+for x, w in enumerate(weeks):
+    for y, d in enumerate(w["contributionDays"]):
+        c = d["contributionCount"]
+        color = color_for(c)
 
-        # random small desync
-        delay = round(random.uniform(0,1), 2)
+        # desync but very subtle — NOT wavey
+        delay = (x*7 + y) * 0.012  
 
         svg.append(
-            f'<rect x="{x*(cell+pad)}" y="{y}" width="{cell}" height="{cell}" fill="{c}" '
-            f'style="animation: flicker 2s infinite steps(2,start); animation-delay:{delay}s;" />'
+            f'<rect class="rect" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
+            f'width="{CELL}" height="{CELL}" fill="{color}" '
+            f'style="animation-delay:{delay}s" />'
         )
 
 svg.append("</svg>")
 
 os.makedirs("dist", exist_ok=True)
-with open("dist/dracula_pulse.svg","w") as f:
+with open("dist/heartbeat-dracula.svg", "w") as f:
     f.write("\n".join(svg))
 
-print("✅ Generated dist/dracula_pulse.svg")
+print("✅ Dracula Pulse grid alive from start — cyan→red done")
