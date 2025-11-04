@@ -1,4 +1,4 @@
-import os, requests, cmath, math
+import os, requests, math, random
 
 GITHUB_USER = "th-efool"
 
@@ -61,46 +61,20 @@ x_offset = (calendar_width - mask_width) // 2
 TH_EFOOL_MASK = {(x + x_offset, y + 1) for (x, y) in TH_EFOOL_MASK_BASE}
 
 CELL, GAP = 14, 3
-W = len(weeks)*(CELL+GAP)
-H = 7*(CELL+GAP)
+W = len(weeks) * (CELL + GAP)
+H = 7 * (CELL + GAP)
 
 SUBDIV = 2
-micro = CELL//SUBDIV
-micro_gap = GAP/SUBDIV
+micro = CELL // SUBDIV
+micro_gap = GAP / SUBDIV
 
-def intensity(count):
+def intensity(c):
     for i, th in enumerate(THRESHOLDS):
-        if count < th:
+        if c < th:
             return PALETTE[i-1]
     return PALETTE[-1]
 
-# -------- Julia fractal field --------
-c = complex(-0.70176, -0.3842)
-max_iter = 28
-
-def julia_val(nx, ny):
-    # map canvas coords -> complex plane
-    zx = 1.4*(nx/W - 0.5)
-    zy = 1.4*(ny/H - 0.5)
-    z = complex(zx, zy)
-    for i in range(max_iter):
-        z = z*z + c
-        if abs(z) > 2: 
-            return i / max_iter
-    return 1.0
-
-def mix(a,b,t): return a + (b-a)*t
-
-def julia_color(alpha):
-    # base fractal cyan #79dafa blended to your pink #ff6e96
-    r1,g1,b1 = (0x79,0xda,0xfa)
-    r2,g2,b2 = (0xff,0x6e,0x96)
-    t = alpha*0.9
-    return f"rgba({int(mix(r1,r2,t))},{int(mix(g1,g2,t))},{int(mix(b1,b2,t))},{alpha:.3f})"
-
-svg = [
-    f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">'
-]
+svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">']
 
 svg.append("""
 <style>
@@ -109,42 +83,92 @@ svg.append("""
   92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
   96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
 }
-.cell{shape-rendering:crispEdges;animation:pulse 2s infinite linear;}
-.jf {shape-rendering:crispEdges;animation:pulse 2s infinite linear;}
+.cell {
+  shape-rendering:crispEdges;
+  animation:pulse 2s infinite linear;
+}
+.noise {
+  mix-blend-mode: screen;
+  animation:pulse 2s infinite linear;
+}
 </style>
 """)
 
+# -------- Neural noise functions --------
+
+def hash(v):
+    v = math.sin(v*12.9898)*43758.5453
+    return v - math.floor(v)
+
+def noise2d(x, y):
+    i, j = int(x), int(y)
+    fx, fy = x - i, y - j
+    a = hash(i + j*57)
+    b = hash(i+1 + j*57)
+    c = hash(i + (j+1)*57)
+    d = hash(i+1 + (j+1)*57)
+    u = fx*fx*(3-2*fx)
+    v = fy*fy*(3-2*fy)
+    return (a*(1-u)*(1-v) + b*u*(1-v) + c*(1-u)*v + d*u*v)
+
+# center of mask
+cx = (min(x for x,_ in TH_EFOOL_MASK) + max(x for x,_ in TH_EFOOL_MASK)) / 2
+cy = (min(y for _,y in TH_EFOOL_MASK) + max(y for _,y in TH_EFOOL_MASK)) / 2
+
+# -------- Draw contribution grid --------
 for x, week in enumerate(weeks):
     for y, day in enumerate(week["contributionDays"]):
+        fill = intensity(day["contributionCount"])
+        delay = (x * 7 + y) * 0.0113
+        is_mask = (x, y) in TH_EFOOL_MASK
+
         baseX = x*(CELL+GAP)
         baseY = y*(CELL+GAP)
-        fill = intensity(day["contributionCount"])
-        delay = (x*7+y)*0.0113
-        is_mask = (x,y) in TH_EFOOL_MASK
 
-        # micro-pixels
         for i in range(SUBDIV):
             for j in range(SUBDIV):
                 px = baseX + i*(micro+micro_gap)
                 py = baseY + j*(micro+micro_gap)
                 svg.append(
-                    f'<rect class="cell" x="{px}" y="{py}" width="{micro}" height="{micro}" fill="{fill}" style="animation-delay:{delay}s"/>'
+                    f'<rect class="cell" x="{px}" y="{py}" width="{micro}" height="{micro}" '
+                    f'fill="{fill}" style="animation-delay:{delay}s"/>'
                 )
-
-                # fractal overlay
-                nx = px + micro*0.5
-                ny = py + micro*0.5
-                a = julia_val(nx, ny)
-                if a > 0.05:
-                    col = julia_color(a*0.65)
-                    svg.append(
-                        f'<rect class="jf" x="{px}" y="{py}" width="{micro}" height="{micro}" fill="{col}" style="animation-delay:{delay}s"/>'
-                    )
 
         if is_mask:
             svg.append(
-                f'<rect x="{baseX}" y="{baseY}" width="{CELL}" height="{CELL}" fill="none" stroke="white" stroke-width="1.2"/>'
+                f'<rect x="{baseX}" y="{baseY}" width="{CELL}" height="{CELL}" '
+                f'fill="none" stroke="white" stroke-width="1.2"/>'
             )
+
+# -------- Neural glow overlay --------
+scale = 0.18
+falloff = 0.9
+
+for x in range(len(weeks)):
+    for y in range(7):
+        baseX = x*(CELL+GAP)
+        baseY = y*(CELL+GAP)
+
+        # distance from TH-EFOOL field center (grid coords)
+        d = math.sqrt((x-cx)**2 + (y-cy)**2)
+        mask = math.exp(-d*falloff)
+
+        for i in range(SUBDIV):
+            for j in range(SUBDIV):
+                px = baseX + i*(micro+micro_gap)
+                py = baseY + j*(micro+micro_gap)
+
+                # Perlin noise
+                n = noise2d(x*scale + i*0.3, y*scale + j*0.3)
+                a = max(0, n * mask * 0.45)  # 0–0.45 opacity
+
+                if a < 0.02: 
+                    continue
+
+                svg.append(
+                    f'<rect class="noise" x="{px}" y="{py}" width="{micro}" height="{micro}" '
+                    f'fill="rgba(255,110,150,{a:.3f})"/>'
+                )
 
 svg.append("</svg>")
 
@@ -152,4 +176,4 @@ os.makedirs("dist", exist_ok=True)
 with open("dist/heartbeat-dracula.svg","w") as f:
     f.write("\n".join(svg))
 
-print("✅ SVG generated: dist/heartbeat-dracula.svg (Julia pulse overlay)")
+print("✅ SVG generated: dist/heartbeat-dracula.svg")
