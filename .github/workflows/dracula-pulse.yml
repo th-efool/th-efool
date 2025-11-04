@@ -28,18 +28,18 @@ jobs:
 
       - name: Generate Dracula Pulse SVG
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p dist
           python3 scripts/gen_dracula_pulse.py
 
-      - name: Publish output
+      - name: Publish pulse art
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: dracula-pulse-art
           publish_dir: ./dist
           user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
+          user_email: github-actions@github.com
           commit_message: "update: dracula pulse"
           force_orphan: true
