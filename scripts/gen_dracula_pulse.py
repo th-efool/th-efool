@@ -43,8 +43,9 @@ query ($login: String!) {
 """
 
 def pick_color(count):
-    for idx, threshold in enumerate(THRESHOLDS):
-        if count < threshold: return COLORS[idx-1]
+    for idx, th in enumerate(THRESHOLDS):
+        if count < th:
+            return COLORS[idx-1]
     return COLORS[-1]
 
 def main():
@@ -60,51 +61,58 @@ def main():
 
     weeks = resp["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
 
-    week_count = len(weeks)
+    wc = len(weeks)
     glyph_width = max(x for x,_ in MASK_BASE) + 1
-    x_shift = (week_count - glyph_width) // 2
+    x_shift = (wc - glyph_width) // 2
     mask = {(x + x_shift, y + 1) for (x, y) in MASK_BASE}
 
     CELL, GAP = 14, 3
-    MICRO_DIV = 2
-    micro_size = CELL // MICRO_DIV
-    micro_gap = GAP / MICRO_DIV
+    W = wc * (CELL + GAP)
+    H = 7 * (CELL + GAP)
 
-    total_w = week_count * (CELL + GAP)
-    total_h = 7 * (CELL + GAP)
+    svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" '
+           f'xmlns="http://www.w3.org/2000/svg">']
 
-    svg = [f'<svg width="{total_w}" height="{total_h}" viewBox="0 0 {total_w} {total_h}" fill="none" xmlns="http://www.w3.org/2000/svg">']
-
+    # grid pattern simulating micro pixels
     svg.append("""
-<style>
-@keyframes pulse {
-  0%,100% { opacity:1; filter:drop-shadow(0 0 2px currentColor); }
-  92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
-  96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
-}
-.cell { shape-rendering:crispEdges; animation:pulse 2s infinite linear; }
-</style>
+<defs>
+  <pattern id="pixelGrid" width="7" height="7" patternUnits="userSpaceOnUse">
+    <rect width="7" height="7" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="0.4"/>
+  </pattern>
+
+  <style>
+    @keyframes pulse {
+      0%,100% { opacity:1; filter:drop-shadow(0 0 2px currentColor); }
+      92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
+      96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
+    }
+    .cell {
+      animation:pulse 2s infinite linear;
+      shape-rendering:crispEdges;
+    }
+  </style>
+</defs>
 """)
 
     for x, week in enumerate(weeks):
         base_x = x * (CELL + GAP)
-
         for y, day in enumerate(week["contributionDays"]):
             base_y = y * (CELL + GAP)
             color = pick_color(day["contributionCount"])
             delay = (x * 7 + y) * 0.0113
-            selected = (x, y) in mask
+            active = (x, y) in mask
 
-            for mx in range(MICRO_DIV):
-                px = base_x + mx*(micro_size+micro_gap)
-                for my in range(MICRO_DIV):
-                    py = base_y + my*(micro_size+micro_gap)
-                    svg.append(
-                        f'<rect class="cell" x="{px}" y="{py}" width="{micro_size}" height="{micro_size}" '
-                        f'fill="{color}" style="animation-delay:{delay}s" />'
-                    )
-
-            if selected:
+            # main cell
+            svg.append(
+                f'<rect class="cell" x="{base_x}" y="{base_y}" width="{CELL}" height="{CELL}" '
+                f'fill="{color}" style="animation-delay:{delay}s" />'
+            )
+            # fake pixel grid overlay
+            svg.append(
+                f'<rect x="{base_x}" y="{base_y}" width="{CELL}" height="{CELL}" fill="url(#pixelGrid)" />'
+            )
+            # highlight for mask cells
+            if active:
                 svg.append(
                     f'<rect x="{base_x}" y="{base_y}" width="{CELL}" height="{CELL}" '
                     f'fill="none" stroke="white" stroke-width="1.2"/>'
@@ -116,7 +124,7 @@ def main():
     with open("dist/heartbeat-dracula.svg","w") as f:
         f.write("\n".join(svg))
 
-    print("✅ SVG generated: dist/heartbeat-dracula.svg")
+    print("✅ PC SVG (grid-fake) generated: dist/heartbeat-dracula.svg")
 
 if __name__ == "__main__":
     main()
