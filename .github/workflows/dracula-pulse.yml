@@ -26,12 +26,13 @@ jobs:
       - name: Install deps
         run: pip install requests
 
-      - name: Generate Dracula Pulse SVG
+      - name: Generate Dracula Pulse SVGs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p dist
           python3 scripts/gen_dracula_pulse.py
+          python3 scripts/gen_dracula_pulse_mobile.py
 
       - name: Publish pulse art
         uses: peaceiris/actions-gh-pages@v3
