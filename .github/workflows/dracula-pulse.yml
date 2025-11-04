@@ -13,59 +13,27 @@ permissions:
 jobs:
   pulse:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create output directory
-        run: mkdir -p dist
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests
 
       - name: Generate Dracula Pulse SVG
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          node <<'EOF'
-          async function generate() {
-            const fs = require('fs');
+          mkdir -p dist
+          python3 gen_dracula_pulse.py
 
-            // Dracula palette
-            const palette = {
-              low:  "#4a4f78",
-              mid:  "#6272A4",
-              high: "#BD93F9",
-              peak: "#FF79C6"
-            };
-
-            // Fake grid intensity just for structure (real data comes soon)
-            const gridSize = 7;
-            let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="110">`;
-
-            let animIndex = 0;
-            for (let y = 0; y < gridSize; y++) {
-              for (let x = 0; x < 53; x++) {
-                const lvl = (x + y) % 4;
-                const fill = [palette.low, palette.mid, palette.high, palette.peak][lvl];
-
-                svg += `
-                  <rect x="${x * 9}" y="${y * 15}" width="8" height="8" rx="2"
-                    fill="${fill}">
-                    <animate attributeName="opacity"
-                      values="0.4;1;0.6;1"
-                      dur="${1.3 + (lvl*0.2)}s"
-                      begin="${animIndex * 0.05}s"
-                      repeatCount="indefinite"
-                    />
-                  </rect>
-                `;
-                animIndex++;
-              }
-            }
-
-            svg += `</svg>`;
-            fs.writeFileSync("dist/dracula-pulse.svg", svg);
-          }
-          generate();
-          EOF
-
-      - name: Publish to pulse branch
+      - name: Publish output
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -73,5 +41,5 @@ jobs:
           publish_dir: ./dist
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
-          commit_message: "Update dracula pulse"
+          commit_message: "update: dracula pulse"
           force_orphan: true
