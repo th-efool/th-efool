@@ -224,11 +224,14 @@ for x, week in enumerate(weeks):
         phase = julia[sample_y][sample_x]
         duration = 2.4 + phase * 2.0
         delay = phase * 1.2
-        stroke_attr = 'class="mask"' if (x, y) in TH_EFOOL_MASK else ''
+        classes = "cell"
+        if (x, y) in TH_EFOOL_MASK:
+            classes += " mask"
+
         svg_lines.append(
-            f'<rect class="cell" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" width="{CELL}" height="{CELL}" '
-            f'fill="{fill}" {stroke_attr} '
-            f'style="animation-duration:{duration:.3f}s; animation-delay:{delay:.3f}s"/>'
+            f'<rect class="{classes}" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" width="{CELL}" height="{CELL}" '
+            f'fill="{fill}" '
+            f'style="animation-duration:{duration:.3f}s; animation-delay:{delay:.3f}s" />'
         )
 
 svg_lines.append('</g>')  # end github group
