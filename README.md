@@ -82,26 +82,62 @@
 ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white)
 
 </div>
-
 ## 💻 Tech Stack
 <div align="center">
 
-### 🧠 Languages
-[![My Skills](https://skillicons.dev/icons?i=cpp,cs,c,python,js,ts,html,css)](https://skillicons.dev)
+<!-- 🧠 Languages -->
+<img src="https://cdn.simpleicons.org/c/00599C" height="40" alt="C"/>
+<img src="https://cdn.simpleicons.org/cplusplus/00599C" height="40" alt="C++"/>
+<img src="https://cdn.simpleicons.org/csharp/239120" height="40" alt="C#"/>
+<img src="https://cdn.simpleicons.org/python/3776AB" height="40" alt="Python"/>
+<img src="https://cdn.simpleicons.org/javascript/F7DF1E" height="40" alt="JavaScript"/>
+<img src="https://cdn.simpleicons.org/typescript/3178C6" height="40" alt="TypeScript"/>
+<img src="https://cdn.simpleicons.org/html5/E34F26" height="40" alt="HTML5"/>
+<img src="https://cdn.simpleicons.org/css3/1572B6" height="40" alt="CSS3"/>
 
-### ⚙️ Frameworks & Libraries
-[![My Skills](https://skillicons.dev/icons?i=react,reactnative,redux,vue,express,nextjs,graphql,threejs,p5js,socketio)](https://skillicons.dev)
+<!-- ⚙️ Frameworks & Libraries -->
+<img src="https://cdn.simpleicons.org/react/61DAFB" height="40" alt="React"/>
+<img src="https://cdn.simpleicons.org/react/61DAFB" height="40" alt="React Native"/>
+<img src="https://cdn.simpleicons.org/redux/764ABC" height="40" alt="Redux"/>
+<img src="https://cdn.simpleicons.org/vue.js/4FC08D" height="40" alt="Vue.js"/>
+<img src="https://cdn.simpleicons.org/nextdotjs/000000" height="40" alt="Next.js"/>
+<img src="https://cdn.simpleicons.org/express/404d59" height="40" alt="Express.js"/>
+<img src="https://cdn.simpleicons.org/graphql/E10098" height="40" alt="GraphQL"/>
+<img src="https://cdn.simpleicons.org/three.js/000000" height="40" alt="Three.js"/>
+<img src="https://cdn.simpleicons.org/p5dotjs/ED225D" height="40" alt="p5.js"/>
+<img src="https://cdn.simpleicons.org/socketdotio/010101" height="40" alt="Socket.io"/>
 
-### 🧰 Tools & Platforms
-[![My Skills](https://skillicons.dev/icons?i=docker,githubactions,git,github,vercel,cmake,unreal,unity,opengl,nvidia)](https://skillicons.dev)
+<!-- ☁️ Tools & Platforms -->
+<img src="https://cdn.simpleicons.org/docker/2496ED" height="40" alt="Docker"/>
+<img src="https://cdn.simpleicons.org/githubactions/2088FF" height="40" alt="GitHub Actions"/>
+<img src="https://cdn.simpleicons.org/vercel/000000" height="40" alt="Vercel"/>
+<img src="https://cdn.simpleicons.org/git/F05032" height="40" alt="Git"/>
+<img src="https://cdn.simpleicons.org/github/181717" height="40" alt="GitHub"/>
+<img src="https://cdn.simpleicons.org/cmake/064F8C" height="40" alt="CMake"/>
+<img src="https://cdn.simpleicons.org/unrealengine/313131" height="40" alt="Unreal Engine"/>
+<img src="https://cdn.simpleicons.org/unity/000000" height="40" alt="Unity"/>
 
-### 🧪 Data & AI
-[![My Skills](https://skillicons.dev/icons?i=tensorflow,keras,numpy,pandas,matplotlib)](https://skillicons.dev)
+<!-- 🧪 Data & AI -->
+<img src="https://cdn.simpleicons.org/tensorflow/FF6F00" height="40" alt="TensorFlow"/>
+<img src="https://cdn.simpleicons.org/keras/D00000" height="40" alt="Keras"/>
+<img src="https://cdn.simpleicons.org/numpy/013243" height="40" alt="NumPy"/>
+<img src="https://cdn.simpleicons.org/pandas/150458" height="40" alt="Pandas"/>
+<img src="https://cdn.simpleicons.org/matplotlib/11557C" height="40" alt="Matplotlib"/>
+<img src="https://cdn.simpleicons.org/mongodb/47A248" height="40" alt="MongoDB"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/OpenGL_logo.svg" height="40" alt="OpenGL"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg" height="40" alt="NVIDIA CUDA"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/DirectX_Logo.svg" height="40" alt="DirectX"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Vulkan_logo.svg" height="40" alt="Vulkan"/>
 
-### 🎨 Design & Media
-[![My Skills](https://skillicons.dev/icons?i=photoshop,aftereffects,premiere,figma,canva)](https://skillicons.dev)
+<!-- 🎨 Design & Media -->
+<img src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" height="40" alt="Adobe Photoshop"/>
+<img src="https://cdn.simpleicons.org/adobepremierepro/9999FF" height="40" alt="Adobe Premiere Pro"/>
+<img src="https://cdn.simpleicons.org/adobeaftereffects/9999FF" height="40" alt="Adobe After Effects"/>
+<img src="https://cdn.simpleicons.org/figma/F24E1E" height="40" alt="Figma"/>
+<img src="https://cdn.simpleicons.org/canva/00C4CC" height="40" alt="Canva"/>
 
 </div>
+
 
 ## 📊 GitHub Stats
 <div align="center">
