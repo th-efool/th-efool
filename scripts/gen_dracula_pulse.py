@@ -72,9 +72,9 @@ CELL, GAP = 14, 3
 W = len(weeks) * (CELL + GAP)
 H = 7 * (CELL + GAP)
 
-SUBDIV = 2                        # 4x4 microgrid
-micro = CELL // SUBDIV
-micro_gap = GAP / SUBDIV
+SUBDIV = 2
+micro = CELL / SUBDIV      # float to avoid rounding seams
+micro_gap = 0              # remove inner seams completely
 
 def intensity(count):
     for i, th in enumerate(THRESHOLDS):
@@ -83,17 +83,21 @@ def intensity(count):
     return PALETTE[-1]
 
 svg = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-       f'fill="none" xmlns="http://www.w3.org/2000/svg">']
+       f'fill="none" xmlns="http://www.w3.org/2000/svg">'
+       ]
 
 svg.append("""
 <style>
+svg {
+  shape-rendering:crispEdges;
+}
 @keyframes pulse {
   0%,100% { opacity:1; filter:drop-shadow(0 0 2px currentColor); }
   92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
   96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
 }
 .cell {
-  shape-rendering:crispEdges;
+  shape-rendering:geometricPrecision;
   animation:pulse 2s infinite linear;
 }
 </style>
@@ -108,14 +112,14 @@ for x, week in enumerate(weeks):
         is_mask = (x, y) in TH_EFOOL_MASK
         stroke_tag = 'stroke="white" stroke-width="1.2"' if is_mask else ""
 
-        # micro-pixels
         baseX = x*(CELL+GAP)
         baseY = y*(CELL+GAP)
 
+        # subdivided but seamless micro-rects
         for i in range(SUBDIV):
             for j in range(SUBDIV):
-                px = baseX + i*(micro+micro_gap)
-                py = baseY + j*(micro+micro_gap)
+                px = baseX + i * micro
+                py = baseY + j * micro
                 svg.append(
                     f'<rect class="cell" x="{px}" y="{py}" width="{micro}" height="{micro}" '
                     f'fill="{fill}" style="animation-delay:{delay}s" />'
