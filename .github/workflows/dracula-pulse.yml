@@ -31,7 +31,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p dist
-          python3 scripts/gen_dracula_pulse.py
+          python3 gen_dracula_pulse.py
 
       - name: Publish output
         uses: peaceiris/actions-gh-pages@v3
