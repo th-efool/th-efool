@@ -2,18 +2,29 @@
 
 <!-- Snake animation -->
 <picture>
+  <!-- 💡 Light mode -->
   <source
-    media="(min-width: 500px) and (pointer: fine)"
+    media="(prefers-color-scheme: light) and (min-width: 500px) and (pointer: fine)"
+    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-light.svg"
+  />
+
+  <!-- 🌑 Dark mode -->
+  <source
+    media="(prefers-color-scheme: dark) and (min-width: 500px) and (pointer: fine)"
     srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg"
   />
+
+  <!-- 📱 Default fallback (mobile or no color-scheme support) -->
   <img
     src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg"
     width="100%"
     loading="lazy"
     decoding="async"
     style="display:block;"
+    alt="GitHub Pulse Visualization"
   />
 </picture>
+
 
 
 ###
