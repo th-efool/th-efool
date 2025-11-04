@@ -1,23 +1,20 @@
 #!/usr/bin/env python3
-import os, requests, math
+import requests, datetime, os, random
 
-GITHUB_USER = "th-efool"
+TOKEN = os.environ.get("GH_TOKEN")
+USERNAME = "th-efool"
 
-PALETTE = [
-    "#282A36", # 0 commits (visible, dark)
-    "#44475A", # low
-    "#6272A4", # medium
-    "#BD93F9", # high
-    "#FF79C6"  # peak neon
-]
+API = "https://api.github.com/graphql"
+headers = {"Authorization": f"Bearer {TOKEN}"}
 
 query = """
-query ($login: String!) {
-  user(login: $login) {
+query($user:String!) {
+  user(login:$user) {
     contributionsCollection {
       contributionCalendar {
         weeks {
           contributionDays {
+            weekday
             date
             contributionCount
           }
@@ -28,76 +25,76 @@ query ($login: String!) {
 }
 """
 
-token = os.getenv("GITHUB_TOKEN")
-if not token:
-    raise SystemExit("❌ Missing GITHUB_TOKEN env")
+res = requests.post(API, json={"query": query, "variables": {"user": USERNAME}}, headers=headers)
+data = res.json()
 
-headers = {
-    "Content-Type": "application/json",
-    "Authorization": f"bearer {token}"
-}
+if "errors" in data:
+    print(data)
+    exit(1)
 
-resp = requests.post(
-    "https://api.github.com/graphql",
-    json={"query": query, "variables": {"login": GITHUB_USER}},
-    headers=headers
-)
+weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
 
-if resp.status_code != 200:
-    raise SystemExit(f"❌ GitHub API error: {resp.text}")
+# 6-level dracula neon palette
+LEVEL_COLORS = [
+    "#8be9fd", # Cyan
+    "#50fa7b", # Green
+    "#ffb86c", # Orange
+    "#ff79c6", # Pink
+    "#bd93f9", # Purple
+    "#ff5555"  # Red
+]
 
-weeks = resp.json()["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-days = [d for w in weeks for d in w["contributionDays"]]
+# thresholds for each level
+THRESHOLDS = [1,2,4,8,12,20]
 
-max_commit = max(d["contributionCount"] for d in days) or 1
+def color_for(count):
+    for i,th in reversed(list(enumerate(THRESHOLDS))):
+        if count >= th:
+            return LEVEL_COLORS[i]
+    return "none"
 
-CELL, GAP = 14, 3
-W = len(weeks) * (CELL + GAP)
-H = 7 * (CELL + GAP)
+# --- SVG parameters ---
+cell = 12
+pad = 3
+bg = "#0d1117"  # github background
+width = len(weeks) * (cell + pad)
+height = 7 * (cell + pad)
 
-svg = []
-svg.append(f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">')
-
-svg.append("""
-<style>
-@keyframes glowPulse {
-  0%   { filter: drop-shadow(0 0 0px #BD93F9); }
-  50%  { filter: drop-shadow(0 0 5px #FF79C6); }
-  100% { filter: drop-shadow(0 0 0px #BD93F9); }
-}
-
+svg = [
+f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">',
+f'<rect width="100%" height="100%" fill="{bg}" />',
+'<style>',
+"""
 @keyframes flicker {
-  0%, 18%, 20%, 48%, 50%, 100% { opacity: 1; }
-  19%, 49% { opacity: 0.55; }
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px currentColor); }
+  92% { opacity: 0.75; filter: drop-shadow(0 0 6px currentColor); }
+  95% { opacity: 0.4; filter: drop-shadow(0 0 1px currentColor); }
 }
+""",
+'</style>'
+]
 
-.rect {
-  shape-rendering: crispEdges;
-}
-</style>
-""")
+for x,week in enumerate(weeks):
+    for day in week["contributionDays"]:
+        count = day["contributionCount"]
+        if count == 0:
+            continue
+        
+        c = color_for(count)
+        y = day["weekday"] * (cell + pad)
 
-for x, w in enumerate(weeks):
-    for y, d in enumerate(w["contributionDays"]):
-        c = d["contributionCount"]
-        intensity = c / max_commit
-        idx = min(4, max(0, int(intensity * 4)))
-        color = PALETTE[idx]
-
-        anim = ""
-        if c > 0:
-            delay = (x * 7 + y) * 0.07
-            anim = f' style="animation: glowPulse 2s ease-in-out infinite {delay}s, flicker 2s infinite {delay}s"'
+        # random small desync
+        delay = round(random.uniform(0,1), 2)
 
         svg.append(
-            f'<rect x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" width="{CELL}" height="{CELL}" '
-            f'fill="{color}" class="rect"{anim}/>'
+            f'<rect x="{x*(cell+pad)}" y="{y}" width="{cell}" height="{cell}" fill="{c}" '
+            f'style="animation: flicker 2s infinite steps(2,start); animation-delay:{delay}s;" />'
         )
 
 svg.append("</svg>")
 
 os.makedirs("dist", exist_ok=True)
-with open("dist/heartbeat-dracula.svg", "w") as f:
+with open("dist/dracula_pulse.svg","w") as f:
     f.write("\n".join(svg))
 
-print("✅ Generated dist/heartbeat-dracula.svg")
+print("✅ Generated dist/dracula_pulse.svg")
