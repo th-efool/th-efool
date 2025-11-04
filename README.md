@@ -2,13 +2,10 @@
 
 <!-- Snake animation -->
 <picture>
-  <!-- Desktop first -->
   <source
-    media="(min-width: 600px)"
+    media="(min-width: 500px) and (pointer: fine)"
     srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg"
   />
-
-  <!-- Mobile fallback -->
   <img
     src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg"
     width="100%"
@@ -17,6 +14,7 @@
     style="display:block;"
   />
 </picture>
+
 
 ###
 <div align="center">
