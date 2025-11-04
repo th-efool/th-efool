@@ -72,7 +72,7 @@ CELL, GAP = 14, 3
 W = len(weeks) * (CELL + GAP)
 H = 7 * (CELL + GAP)
 
-SUBDIV = 3                        # 4x4 microgrid
+SUBDIV = 2                        # 4x4 microgrid
 micro = CELL // SUBDIV
 micro_gap = GAP / SUBDIV
 
