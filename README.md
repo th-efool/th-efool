@@ -4,7 +4,7 @@
 <picture>
   <!-- Desktop first -->
   <source
-    media="(min-width: 700px)"
+    media="(min-width: 600px)"
     srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg"
   />
 
