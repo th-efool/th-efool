@@ -1,4 +1,4 @@
-<img src="https://visitor-badge.laobi.icu/badge?page_id=<your_username>.<your_repo>" alt="visitors"/>
+<img src="https://visitor-badge.laobi.icu/badge?page_id=th-efool.th-efool" alt="visitors"/>
 
 
 <div align="center" style="background-color:#282a36;>
