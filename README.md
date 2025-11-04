@@ -1,4 +1,4 @@
-<div align="center" style="background-color:#0d1117; color:#e6edf3; padding:30px; border-radius:8px;">
+<div align="center" style="background-color:#282a36; color:#e6edf3; padding:30px; border-radius:8px;">
 
 <!-- Snake animation -->
 <picture>
