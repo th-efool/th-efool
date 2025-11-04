@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, requests
+import os, requests, math
 
 GITHUB_USER = "th-efool"
 
@@ -13,39 +13,88 @@ PALETTE = [
     "#ff6e96",
 ]
 THRESHOLDS = [0,1,2,4,8,12,20]
-TH_EFOOL_MASK = {
-    # T
-    (0,0),(0,1),(0,2),(0,3),(0,4),
-    (1,2),
-    (2,2),
-    # H
-    (4,0),(4,1),(4,2),(4,3),(4,4),
-    (5,2),
-    (6,0),(6,1),(6,2),(6,3),(6,4),
-    # -
-    (8,2),(9,2),(10,2),
-    # E
-    (12,0),(12,1),(12,2),(12,3),(12,4),
-    (13,0),
-    (14,0),(14,1),(14,2),
-    (13,4),(14,4),
-    # F
-    (16,0),(16,1),(16,2),(16,3),(16,4),
-    (17,0),
-    (18,0),(18,1),(18,2),
-    # O
-    (20,1),(20,2),(20,3),
-    (21,0),(21,4),
-    (22,1),(22,2),(22,3),
-    # O
-    (24,1),(24,2),(24,3),
-    (25,0),(25,4),
-    (26,1),(26,2),(26,3),
-    # L
-    (28,0),(28,1),(28,2),(28,3),(28,4),
-    (29,4),(30,4)
+
+# === Roboto-inspired 7px high bitmap font ===
+letters = {
+"t":[
+"###..",
+".#...",
+".#...",
+".#...",
+".#...",
+".#...",
+"....."
+],
+"h":[
+"#....",
+"#....",
+"####.",
+"#..#.",
+"#..#.",
+"#..#.",
+"....."
+],
+"-":[
+".....",
+".....",
+".###.",
+".....",
+".....",
+".....",
+"....."
+],
+"e":[
+".###.",
+"#...#",
+"#####",
+"#....",
+"#....",
+".###.",
+"....."
+],
+"f":[
+".###.",
+".#...",
+"####.",
+".#...",
+".#...",
+".#...",
+"....."
+],
+"o":[
+".###.",
+"#...#",
+"#...#",
+"#...#",
+"#...#",
+".###.",
+"....."
+],
+"l":[
+"#....",
+"#....",
+"#....",
+"#....",
+"#....",
+"####.",
+"....."
+]
 }
 
+text = "th-e fool"
+
+# Build raw pixel mask coordinates (local space)
+mask_pixels = []
+cursor = 0
+for ch in text:
+    glyph = letters[ch]
+    for y, row in enumerate(glyph):
+        for x, c in enumerate(row):
+            if c == "#":
+                mask_pixels.append((cursor + x, y))
+    cursor += len(glyph[0]) + 1  # 1px gap between letters
+
+# GitHub GraphQL query
 query = """
 query ($login: String!) {
   user(login: $login) {
@@ -75,10 +124,16 @@ resp = requests.post(
 ).json()
 
 weeks = resp["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-days = [d for w in weeks for d in w["contributionDays"]]
+
+# === Center the mask across the calendar ===
+week_count = len(weeks)
+mask_width = max([p[0] for p in mask_pixels]) + 1
+mask_start = max(0, (week_count - mask_width) // 2)
+
+TH_EFOOL_MASK = {(mask_start+x, y) for (x, y) in mask_pixels}
 
 CELL, GAP = 14, 3
-W = len(weeks) * (CELL+GAP)
+W = week_count * (CELL+GAP)
 H = 7 * (CELL+GAP)
 
 def intensity(count):
@@ -100,10 +155,6 @@ svg.append("""
   shape-rendering:crispEdges;
   animation:pulse 2s infinite linear;
 }
-.textStroke {
-  stroke:white;
-  stroke-width:1.1;
-}
 </style>
 """)
 
@@ -111,10 +162,10 @@ for x, week in enumerate(weeks):
     for y, day in enumerate(week["contributionDays"]):
         c = day["contributionCount"]
         fill = intensity(c)
-
         delay = (x*7+y)*0.0113
-        is_sig = (x, y) in TH_EFOOL_MASK
-        stroke = 'stroke="white" stroke-width="1.2"' if is_sig else ""
+
+        stroke = 'stroke="white" stroke-width="1.2"' \
+            if (x, y) in TH_EFOOL_MASK else ""
 
         svg.append(
             f'<rect class="cell" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
@@ -122,11 +173,10 @@ for x, week in enumerate(weeks):
             f'style="animation-delay:{delay}s"/>'
         )
 
-
 svg.append("</svg>")
 
 os.makedirs("dist", exist_ok=True)
 with open("dist/dracula-grid.svg","w") as f:
     f.write("\n".join(svg))
 
-print("✅ SVG generated: dist/dracula-grid.svg")
+print("✅ SVG generated: dist/dracula-grid.svg (Roboto centered SIG)")
