@@ -77,11 +77,11 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" height="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" height="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="40" alt="WinAPI (Windows)"/>
+<img src="https://img.shields.io/badge/cuda-000000.svg?style=for-the-badge&logo=nVIDIA&logoColor=green" height="40" alt="CUDA"/>
 
 ### 🎞️ Graphics APIs
 <img src="https://i0.wp.com/howtocheckversion.com/wp-content/uploads/2023/09/1.png?ssl=1" height="40" alt="DirectX"/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Vulkan_API_logo.svg" height="40" alt="Vulkan"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg" height="40" alt="NVIDIA"/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/OpenGL_logo.svg" height="40" alt="OpenGL"/>
 
 
