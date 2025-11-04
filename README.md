@@ -1,8 +1,19 @@
 <div align="center">
 
 <!-- Snake animation -->
-<img src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg" width="100%" />
-
+<picture>
+  <!-- Mobile first rule -->
+  <source
+    media="(max-width: 600px)"
+    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg"
+  />
+  
+  <!-- Desktop default -->
+  <img
+    src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg"
+    width="100%"
+  />
+</picture>
 
 ###
 <div align="center">
