@@ -1,3 +1,4 @@
+<div align="center" style="background-color:#282a36;>
 <div align="center" style="background-color:#282a36; color:#e6edf3; padding:30px; border-radius:8px;">
 
 <!-- Snake animation -->
@@ -103,4 +104,5 @@
 
 <img src="https://visitcount.itsvg.in/api?id=th-efool&icon=0&color=0"/>
 
+</div>
 </div>
