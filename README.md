@@ -1,42 +1,39 @@
 <div align="center">
 
-<!-- Snake animation -->
-<picture>
-  <!-- Light • Desktop -->
-  <source
-    media="(prefers-color-scheme: light) and (min-width: 500px)"
-    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-light.svg?v=1"
-    type="image/svg+xml"
-  />
-  <!-- Dark • Desktop -->
-  <source
-    media="(prefers-color-scheme: dark) and (min-width: 500px)"
-    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg?v=1"
-    type="image/svg+xml"
-  />
-  <!-- Light • Mobile -->
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-light-mobile.svg?v=1"
-    type="image/svg+xml"
-  />
-  <!-- Dark • Mobile -->
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg?v=1"
-    type="image/svg+xml"
-  />
 
-  <!-- Fallback (very old browsers): default to dark mobile -->
+<!-- Wave Dracula Contribution GRID animation -->
+<picture>
   <img
-    src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg?v=1"
+    src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg?v=1"
     width="100%"
     loading="lazy"
     decoding="async"
     style="display:block;"
     alt="GitHub Pulse Visualization"
+    class="theme-image"
   />
 </picture>
+
+<style>
+@media (prefers-color-scheme: light) {
+  .theme-image {
+    content: url("https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-light.svg?v=1");
+  }
+}
+@media (max-width: 500px) and (prefers-color-scheme: light) {
+  .theme-image {
+    content: url("https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-light-mobile.svg?v=1");
+  }
+}
+@media (max-width: 500px) and (prefers-color-scheme: dark) {
+  .theme-image {
+    content: url("https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg?v=1");
+  }
+}
+</style>
+
+</div>
+
 
 
 
