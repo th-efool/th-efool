@@ -44,8 +44,7 @@ query ($login: String!) {
 """
 
 token = os.getenv("GITHUB_TOKEN")
-if not token:
-    raise SystemExit("Missing GITHUB_TOKEN")
+if not token: raise SystemExit("Missing GITHUB_TOKEN")
 
 resp = requests.post(
     "https://api.github.com/graphql",
@@ -68,6 +67,8 @@ SUBDIV = 2
 micro = CELL // SUBDIV
 micro_gap = GAP / SUBDIV
 
+SPARK_PROB = 0.04  # neuron fire probability (~4%)
+
 def intensity(c):
     for i, th in enumerate(THRESHOLDS):
         if c < th:
@@ -83,10 +84,25 @@ svg.append("""
   92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
   96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
 }
+
+@keyframes spark {
+  0%   { fill: inherit; }
+  6%   { fill: rgba(114,203,233,0.65); filter: drop-shadow(0 0 4px rgba(114,203,233,0.8)); }
+  16%  { fill: #72cbe9; filter: drop-shadow(0 0 7px rgba(114,203,233,1)); }
+  32%  { fill: rgba(114,203,233,0.35); filter: none; }
+  100% { fill: inherit; filter: none; }
+}
+
 .cell {
   shape-rendering:crispEdges;
-  animation:pulse 2s infinite linear;
+  animation: pulse 2s infinite linear;
 }
+
+.spark {
+  animation: pulse 2s infinite linear, spark 4.8s infinite ease-in-out;
+  animation-delay: var(--d), calc(var(--d) * 0.35);
+}
+
 .noise {
   mix-blend-mode: screen;
   animation:pulse 2s infinite linear;
@@ -94,8 +110,7 @@ svg.append("""
 </style>
 """)
 
-# -------- Neural noise functions --------
-
+# -------- Neural noise --------
 def hash(v):
     v = math.sin(v*12.9898)*43758.5453
     return v - math.floor(v)
@@ -111,11 +126,10 @@ def noise2d(x, y):
     v = fy*fy*(3-2*fy)
     return (a*(1-u)*(1-v) + b*u*(1-v) + c*(1-u)*v + d*u*v)
 
-# center of mask
 cx = (min(x for x,_ in TH_EFOOL_MASK) + max(x for x,_ in TH_EFOOL_MASK)) / 2
 cy = (min(y for _,y in TH_EFOOL_MASK) + max(y for _,y in TH_EFOOL_MASK)) / 2
 
-# -------- Draw contribution grid --------
+# -------- Grid draw --------
 for x, week in enumerate(weeks):
     for y, day in enumerate(week["contributionDays"]):
         fill = intensity(day["contributionCount"])
@@ -129,9 +143,14 @@ for x, week in enumerate(weeks):
             for j in range(SUBDIV):
                 px = baseX + i*(micro+micro_gap)
                 py = baseY + j*(micro+micro_gap)
+
+                cls = "cell"
+                if random.random() < SPARK_PROB:
+                    cls = "spark"
+
                 svg.append(
-                    f'<rect class="cell" x="{px}" y="{py}" width="{micro}" height="{micro}" '
-                    f'fill="{fill}" style="animation-delay:{delay}s"/>'
+                    f'<rect class="{cls}" x="{px}" y="{py}" width="{micro}" height="{micro}" '
+                    f'fill="{fill}" style="--d:{delay}s" />'
                 )
 
         if is_mask:
@@ -143,13 +162,11 @@ for x, week in enumerate(weeks):
 # -------- Neural glow overlay --------
 scale = 0.18
 falloff = 0.9
-
 for x in range(len(weeks)):
     for y in range(7):
         baseX = x*(CELL+GAP)
         baseY = y*(CELL+GAP)
 
-        # distance from TH-EFOOL field center (grid coords)
         d = math.sqrt((x-cx)**2 + (y-cy)**2)
         mask = math.exp(-d*falloff)
 
@@ -158,12 +175,9 @@ for x in range(len(weeks)):
                 px = baseX + i*(micro+micro_gap)
                 py = baseY + j*(micro+micro_gap)
 
-                # Perlin noise
                 n = noise2d(x*scale + i*0.3, y*scale + j*0.3)
-                a = max(0, n * mask * 0.45)  # 0–0.45 opacity
-
-                if a < 0.02: 
-                    continue
+                a = max(0, n * mask * 0.45)
+                if a < 0.02: continue
 
                 svg.append(
                     f'<rect class="noise" x="{px}" y="{py}" width="{micro}" height="{micro}" '
@@ -176,4 +190,4 @@ os.makedirs("dist", exist_ok=True)
 with open("dist/heartbeat-dracula.svg","w") as f:
     f.write("\n".join(svg))
 
-print("✅ SVG generated: dist/heartbeat-dracula.svg")
+print("✅ SVG generated with neural sparks: dist/heartbeat-dracula.svg")
