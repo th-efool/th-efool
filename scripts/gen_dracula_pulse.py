@@ -6,7 +6,7 @@ GITHUB_USER = "th-efool"
 # Dracula intensity palette (low → high)
 # 0 commit uses background tone internally
 DRACULA_PALETTE = [
-    "#282A36", # 0 commits - bg visible
+    "#6272a4", # 0 commits - bg visible
     "#8be9fd", # 1+ Cyan
     "#50fa7b", # 2+ Green
     "#ffb86c", # 4+ Orange
