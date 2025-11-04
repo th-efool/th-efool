@@ -13,6 +13,38 @@ PALETTE = [
     "#ff6e96",
 ]
 THRESHOLDS = [0,1,2,4,8,12,20]
+TH_EFOOL_MASK = {
+    # T
+    (0,0),(0,1),(0,2),(0,3),(0,4),
+    (1,2),
+    (2,2),
+    # H
+    (4,0),(4,1),(4,2),(4,3),(4,4),
+    (5,2),
+    (6,0),(6,1),(6,2),(6,3),(6,4),
+    # -
+    (8,2),(9,2),(10,2),
+    # E
+    (12,0),(12,1),(12,2),(12,3),(12,4),
+    (13,0),
+    (14,0),(14,1),(14,2),
+    (13,4),(14,4),
+    # F
+    (16,0),(16,1),(16,2),(16,3),(16,4),
+    (17,0),
+    (18,0),(18,1),(18,2),
+    # O
+    (20,1),(20,2),(20,3),
+    (21,0),(21,4),
+    (22,1),(22,2),(22,3),
+    # O
+    (24,1),(24,2),(24,3),
+    (25,0),(25,4),
+    (26,1),(26,2),(26,3),
+    # L
+    (28,0),(28,1),(28,2),(28,3),(28,4),
+    (29,4),(30,4)
+}
 
 query = """
 query ($login: String!) {
@@ -81,14 +113,15 @@ for x, week in enumerate(weeks):
         fill = intensity(c)
 
         delay = (x*7+y)*0.0113
-        strokeClass = " textStroke" if c > 0 else ""
+        is_sig = (x, y) in TH_EFOOL_MASK
+        stroke = 'stroke="white" stroke-width="1.2"' if is_sig else ""
 
         svg.append(
-            f'<rect class="cell{strokeClass}" '
-            f'x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
-            f'width="{CELL}" height="{CELL}" '
-            f'fill="{fill}" style="animation-delay:{delay}s"/>'
+            f'<rect class="cell" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
+            f'width="{CELL}" height="{CELL}" fill="{fill}" {stroke} '
+            f'style="animation-delay:{delay}s"/>'
         )
+
 
 svg.append("</svg>")
 
