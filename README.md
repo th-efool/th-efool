@@ -2,16 +2,19 @@
 
 <!-- Snake animation -->
 <picture>
-  <!-- Mobile first rule -->
+  <!-- Desktop first -->
   <source
-    media="(max-width: 600px)"
-    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg"
+    media="(min-width: 700px)"
+    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg"
   />
-  
-  <!-- Desktop default -->
+
+  <!-- Mobile fallback -->
   <img
-    src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg"
+    src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg"
     width="100%"
+    loading="lazy"
+    decoding="async"
+    style="display:block;"
   />
 </picture>
 
