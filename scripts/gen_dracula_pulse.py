@@ -1,26 +1,40 @@
 #!/usr/bin/env python3
-import os, requests, math
+import os, requests, random
 
 GITHUB_USER = "th-efool"
 
-# Dracula intensity palette (low → high)
-# 0 commit uses background tone internally
-
-
+# Dracula palette — your choices preserved
 DRACULA_PALETTE = [
-    "#0d1117",        # 0 commits - Background (dark theme)
-    "rgba(255, 110, 150, 0.15)",  # 1+ Commit: very faint pinkish shade
-    "rgba(255, 110, 150, 0.22)",  # 2+ Commit: slightly more visible
-    "rgba(255, 110, 150, 0.35)",  # 4+ Commit: subtle pinkish tone
-    "rgba(255, 110, 150, 0.55)",  # 8+ Commit: muted but noticeable
-    "rgba(255, 110, 150, 0.75)",  # 16+ Commit: strong, but still soft
-    "#ff6e96",        # 20+ Commit: full intensity pink
+    "#0d1117",
+    "rgba(255, 110, 150, 0.15)",
+    "rgba(255, 110, 150, 0.22)",
+    "rgba(255, 110, 150, 0.35)",
+    "rgba(255, 110, 150, 0.55)",
+    "rgba(255, 110, 150, 0.75)",
+    "#ff6e96"
 ]
 
-
-# commit thresholds matching palette indexes
 THRESHOLDS = [0,1,2,4,8,12,20]
 
+# ── Signature bitmap (7 rows, columns = characters)
+# '#' = draw stroke; space = ignore
+# Text: "th-e fool"
+SIGNATURE = [
+"####  #   ####        ###    #### ",
+"#     #   #           #  #   #    ",
+"###   #   ####   ##   ###    ###  ",
+"#     #   #      ##   #  #   #    ",
+"#     ########        #  #   #### ",
+]
+
+# Build overlay pixel coordinates
+signature_pixels = set()
+for row, line in enumerate(SIGNATURE):
+    for col, ch in enumerate(line):
+        if ch == "#":
+            signature_pixels.add((col, row))  # (x, y) in text grid
+
+# GraphQL query
 query = """
 query ($login: String!) {
   user(login: $login) {
@@ -28,7 +42,6 @@ query ($login: String!) {
       contributionCalendar {
         weeks {
           contributionDays {
-            date
             weekday
             contributionCount
           }
@@ -53,26 +66,25 @@ resp = requests.post(
     json={"query": query, "variables": {"login": GITHUB_USER}},
     headers=headers
 )
-
 data = resp.json()
 if "errors" in data:
     print(data)
     exit(1)
 
 weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-days = [d for w in weeks for d in w["contributionDays"]]
+
+def palette_for(count):
+    for i, th in enumerate(THRESHOLDS):
+        if count < th:
+            return DRACULA_PALETTE[i-1]
+    return DRACULA_PALETTE[-1]
 
 CELL, GAP = 14, 3
 W = len(weeks) * (CELL + GAP)
 H = 7 * (CELL + GAP)
 
-def color_for(count):
-    for i, th in enumerate(THRESHOLDS):
-        if count < th: return DRACULA_PALETTE[i-1]
-    return DRACULA_PALETTE[-1]
-
 svg = []
-svg.append(f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http://www.w3.org/2000/svg">')
+svg.append(f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" xmlns="http:\/\/www.w3.org/2000/svg">')
 
 svg.append("""
 <style>
@@ -88,19 +100,34 @@ svg.append("""
 </style>
 """)
 
-for x, w in enumerate(weeks):
-    for y, d in enumerate(w["contributionDays"]):
-        c = d["contributionCount"]
-        color = color_for(c)
+for w_idx, week in enumerate(weeks):
+    for day in week["contributionDays"]:
+        d_idx = day["weekday"]
+        count = day["contributionCount"]
+        base_color = palette_for(count)
 
-        # desync but very subtle — NOT wavey
-        delay = (x*7 + y) * 0.012  
+        # tiny random flicker only on text pixels to feel alive
+        is_text = (w_idx, d_idx) in signature_pixels
+        color = base_color
+        if is_text and random.random() < 0.10:
+            color = DRACULA_PALETTE[-1]
 
-        svg.append(
-            f'<rect class="rect" x="{x*(CELL+GAP)}" y="{y*(CELL+GAP)}" '
-            f'width="{CELL}" height="{CELL}" fill="{color}" '
-            f'style="animation-delay:{delay}s" />'
-        )
+        delay = (w_idx*7 + d_idx) * 0.012
+
+        x = w_idx * (CELL + GAP)
+        y = d_idx * (CELL + GAP)
+
+        if is_text:
+            svg.append(
+                f'<rect class="rect" x="{x}" y="{y}" width="{CELL}" height="{CELL}" '
+                f'fill="{color}" stroke="#ffffff" stroke-width="1.5" '
+                f'style="animation-delay:{delay}s" />'
+            )
+        else:
+            svg.append(
+                f'<rect class="rect" x="{x}" y="{y}" width="{CELL}" height="{CELL}" '
+                f'fill="{color}" style="animation-delay:{delay}s" />'
+            )
 
 svg.append("</svg>")
 
@@ -108,4 +135,4 @@ os.makedirs("dist", exist_ok=True)
 with open("dist/heartbeat-dracula.svg", "w") as f:
     f.write("\n".join(svg))
 
-print("✅ Dracula Pulse grid alive from start — cyan→red done")
+print("✅ Generated with neon flicker + signature")
