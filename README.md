@@ -76,11 +76,14 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg" height="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" height="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" height="40"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/OpenGL_logo.svg" height="40" alt="OpenGL"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="40" alt="WinAPI (Windows)"/>
+
+### 🎞️ Graphics APIs
+<img src="https://i0.wp.com/howtocheckversion.com/wp-content/uploads/2023/09/1.png?ssl=1" height="40" alt="DirectX"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Vulkan_API_logo.svg" height="40" alt="Vulkan"/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg" height="40" alt="NVIDIA"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/DirectX_Logo.svg" height="40" alt="DirectX"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Vulkan_logo.svg" height="40" alt="Vulkan"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Windows_10_Logo.svg" height="40" alt="WinAPI"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/OpenGL_logo.svg" height="40" alt="OpenGL"/>
+
 
 ---
 
