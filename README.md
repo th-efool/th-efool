@@ -83,6 +83,25 @@
 
 </div>
 
+## 💻 Tech Stack
+<div align="center">
+
+### 🧠 Languages
+[![My Skills](https://skillicons.dev/icons?i=cpp,cs,c,python,js,ts,html,css)](https://skillicons.dev)
+
+### ⚙️ Frameworks & Libraries
+[![My Skills](https://skillicons.dev/icons?i=react,reactnative,redux,vue,express,nextjs,graphql,threejs,p5js,socketio)](https://skillicons.dev)
+
+### 🧰 Tools & Platforms
+[![My Skills](https://skillicons.dev/icons?i=docker,githubactions,git,github,vercel,cmake,unreal,unity,opengl,nvidia)](https://skillicons.dev)
+
+### 🧪 Data & AI
+[![My Skills](https://skillicons.dev/icons?i=tensorflow,keras,numpy,pandas,matplotlib)](https://skillicons.dev)
+
+### 🎨 Design & Media
+[![My Skills](https://skillicons.dev/icons?i=photoshop,aftereffects,premiere,figma,canva)](https://skillicons.dev)
+
+</div>
 
 ## 📊 GitHub Stats
 <div align="center">
