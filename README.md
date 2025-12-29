@@ -23,8 +23,8 @@
 ###
 <div align="center">
   
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=th-efool&" alt="th-efool" /></p>
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=th-efool" alt="th-efool" /></a> </p>
+  ![](https://nirzak-streak-stats.vercel.app/?user=th-efool&theme=dracula&hide_border=false)<br/>
+  <img src="https://github-profile-trophy.vercel.app?username=th-efool&theme=dracula&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=false&order=4" height="150" alt="trophy graph"  />
 </div>
 
 ## 🌐 Socials
@@ -103,7 +103,6 @@
 
 ## 📊 GitHub Stats
 <div align="center">
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=th-efool&show_icons=true&locale=en" alt="th-efool" /></p>
 
 <div style="display:flex; gap:10px;">
   <img height="158em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=th-efool&theme=dracula">
