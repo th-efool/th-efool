@@ -1,0 +1,823 @@
+<svg width="901" height="119" viewBox="0 0 901 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+  <pattern id="pixelGrid" width="7" height="7" patternUnits="userSpaceOnUse">
+    <rect width="7" height="7" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="0.4"/>
+  </pattern>
+
+  <style>
+    @keyframes pulse {
+      0%,100% { opacity:1; filter:drop-shadow(0 0 2px currentColor); }
+      92% { opacity:.85; filter:drop-shadow(0 0 5px currentColor); }
+      96% { opacity:.45; filter:drop-shadow(0 0 1px currentColor); }
+    }
+    .cell {
+      animation:pulse 2s infinite linear;
+      shape-rendering:crispEdges;
+    }
+  </style>
+</defs>
+
+<rect class="cell" x="0" y="0" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.0s" />
+<rect x="0" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="0" y="17" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.0113s" />
+<rect x="0" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="0" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:0.0226s" />
+<rect x="0" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="0" y="51" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.0339s" />
+<rect x="0" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="0" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:0.0452s" />
+<rect x="0" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="0" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:0.056499999999999995s" />
+<rect x="0" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="0" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:0.0678s" />
+<rect x="0" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="17" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.07909999999999999s" />
+<rect x="17" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="17" y="17" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.0904s" />
+<rect x="17" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="17" y="34" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.1017s" />
+<rect x="17" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="17" y="51" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.11299999999999999s" />
+<rect x="17" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="17" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.1243s" />
+<rect x="17" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="17" y="85" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.1356s" />
+<rect x="17" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="17" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.1469s" />
+<rect x="17" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="34" y="0" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.15819999999999998s" />
+<rect x="34" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="34" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.16949999999999998s" />
+<rect x="34" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="34" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:0.1808s" />
+<rect x="34" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="34" y="51" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.1921s" />
+<rect x="34" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="34" y="68" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.2034s" />
+<rect x="34" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="34" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:0.21469999999999997s" />
+<rect x="34" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="34" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:0.22599999999999998s" />
+<rect x="34" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="51" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.23729999999999998s" />
+<rect x="51" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="51" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.2486s" />
+<rect x="51" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="51" y="34" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.25989999999999996s" />
+<rect x="51" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="51" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:0.2712s" />
+<rect x="51" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="51" y="68" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.2825s" />
+<rect x="51" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="51" y="85" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.2938s" />
+<rect x="51" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="51" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:0.3051s" />
+<rect x="51" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="68" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:0.31639999999999996s" />
+<rect x="68" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="68" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:0.3277s" />
+<rect x="68" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="68" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:0.33899999999999997s" />
+<rect x="68" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="68" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:0.3503s" />
+<rect x="68" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="68" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:0.3616s" />
+<rect x="68" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="68" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:0.37289999999999995s" />
+<rect x="68" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="68" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:0.3842s" />
+<rect x="68" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="85" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:0.39549999999999996s" />
+<rect x="85" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="85" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:0.4068s" />
+<rect x="85" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="85" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:0.41809999999999997s" />
+<rect x="85" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="85" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:0.42939999999999995s" />
+<rect x="85" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="85" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:0.4407s" />
+<rect x="85" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="85" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:0.45199999999999996s" />
+<rect x="85" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="85" y="102" width="14" height="14" fill="#ff6e96" style="animation-delay:0.4633s" />
+<rect x="85" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="102" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:0.47459999999999997s" />
+<rect x="102" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="102" y="17" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.48589999999999994s" />
+<rect x="102" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="102" y="34" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.4972s" />
+<rect x="102" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="102" y="51" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.5085s" />
+<rect x="102" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="102" y="68" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.5197999999999999s" />
+<rect x="102" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="102" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:0.5311s" />
+<rect x="102" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="102" y="102" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.5424s" />
+<rect x="102" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="119" y="0" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.5537s" />
+<rect x="119" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="119" y="17" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.565s" />
+<rect x="119" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="119" y="34" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.5762999999999999s" />
+<rect x="119" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="119" y="51" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.5876s" />
+<rect x="119" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="119" y="68" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.5989s" />
+<rect x="119" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="119" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:0.6102s" />
+<rect x="119" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="119" y="102" width="14" height="14" fill="#ff6e96" style="animation-delay:0.6214999999999999s" />
+<rect x="119" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="136" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:0.6327999999999999s" />
+<rect x="136" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="136" y="17" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.6441s" />
+<rect x="136" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="136" y="34" width="14" height="14" fill="#ff6e96" style="animation-delay:0.6554s" />
+<rect x="136" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="136" y="51" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.6667s" />
+<rect x="136" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="136" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:0.6779999999999999s" />
+<rect x="136" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="136" y="85" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.6892999999999999s" />
+<rect x="136" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="136" y="102" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.7006s" />
+<rect x="136" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="153" y="0" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.7119s" />
+<rect x="153" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="153" y="17" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.7232s" />
+<rect x="153" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="153" y="34" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.7344999999999999s" />
+<rect x="153" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="153" y="51" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.7457999999999999s" />
+<rect x="153" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="153" y="68" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.7571s" />
+<rect x="153" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="153" y="85" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.7684s" />
+<rect x="153" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="153" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:0.7797s" />
+<rect x="153" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="170" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:0.7909999999999999s" />
+<rect x="170" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="170" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:0.8022999999999999s" />
+<rect x="170" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="170" y="34" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.8136s" />
+<rect x="170" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="170" y="51" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.8249s" />
+<rect x="170" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="170" y="68" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.8361999999999999s" />
+<rect x="170" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="170" y="85" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.8474999999999999s" />
+<rect x="170" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="170" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.8587999999999999s" />
+<rect x="170" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="187" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.8701s" />
+<rect x="187" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="187" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:0.8814s" />
+<rect x="187" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="187" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="187" y="34" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.8926999999999999s" />
+<rect x="187" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="187" y="51" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.9039999999999999s" />
+<rect x="187" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="187" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:0.9152999999999999s" />
+<rect x="187" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="187" y="85" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:0.9266s" />
+<rect x="187" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="187" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:0.9379s" />
+<rect x="187" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="204" y="0" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.9491999999999999s" />
+<rect x="204" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="204" y="17" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:0.9604999999999999s" />
+<rect x="204" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="204" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="204" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:0.9717999999999999s" />
+<rect x="204" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="204" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="204" y="51" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.9831s" />
+<rect x="204" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="204" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="204" y="68" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:0.9944s" />
+<rect x="204" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="204" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="204" y="85" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.0057s" />
+<rect x="204" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="204" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="204" y="102" width="14" height="14" fill="#ff6e96" style="animation-delay:1.017s" />
+<rect x="204" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="221" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:1.0283s" />
+<rect x="221" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="221" y="17" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.0395999999999999s" />
+<rect x="221" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="221" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="221" y="34" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.0509s" />
+<rect x="221" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="221" y="51" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:1.0622s" />
+<rect x="221" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="221" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:1.0735s" />
+<rect x="221" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="221" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:1.0848s" />
+<rect x="221" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="221" y="102" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.0960999999999999s" />
+<rect x="221" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="238" y="0" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.1074s" />
+<rect x="238" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="238" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:1.1187s" />
+<rect x="238" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="238" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:1.13s" />
+<rect x="238" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="238" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:1.1413s" />
+<rect x="238" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="238" y="68" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.1525999999999998s" />
+<rect x="238" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="238" y="85" width="14" height="14" fill="#ff6e96" style="animation-delay:1.1639s" />
+<rect x="238" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="238" y="102" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.1752s" />
+<rect x="238" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="255" y="0" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.1864999999999999s" />
+<rect x="255" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="255" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:1.1978s" />
+<rect x="255" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="255" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="255" y="34" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:1.2090999999999998s" />
+<rect x="255" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="255" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="255" y="51" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.2204s" />
+<rect x="255" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="255" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="255" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:1.2317s" />
+<rect x="255" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="255" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="255" y="85" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.2429999999999999s" />
+<rect x="255" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="255" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="255" y="102" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.2543s" />
+<rect x="255" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="272" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:1.2655999999999998s" />
+<rect x="272" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="272" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:1.2769s" />
+<rect x="272" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="272" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:1.2882s" />
+<rect x="272" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="272" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:1.2994999999999999s" />
+<rect x="272" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="272" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="272" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:1.3108s" />
+<rect x="272" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="272" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:1.3220999999999998s" />
+<rect x="272" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="272" y="102" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.3334s" />
+<rect x="272" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="289" y="0" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.3447s" />
+<rect x="289" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="289" y="17" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.3559999999999999s" />
+<rect x="289" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="289" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="289" y="34" width="14" height="14" fill="#ff6e96" style="animation-delay:1.3673s" />
+<rect x="289" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="289" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="289" y="51" width="14" height="14" fill="#ff6e96" style="animation-delay:1.3785999999999998s" />
+<rect x="289" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="289" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="289" y="68" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.3899s" />
+<rect x="289" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="289" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="289" y="85" width="14" height="14" fill="#ff6e96" style="animation-delay:1.4012s" />
+<rect x="289" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="289" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="289" y="102" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.4124999999999999s" />
+<rect x="289" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="306" y="0" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.4238s" />
+<rect x="306" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="306" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:1.4350999999999998s" />
+<rect x="306" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="306" y="34" width="14" height="14" fill="#ff6e96" style="animation-delay:1.4464s" />
+<rect x="306" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="306" y="51" width="14" height="14" fill="#ff6e96" style="animation-delay:1.4577s" />
+<rect x="306" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="306" y="68" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.4689999999999999s" />
+<rect x="306" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="306" y="85" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.4803s" />
+<rect x="306" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="306" y="102" width="14" height="14" fill="#ff6e96" style="animation-delay:1.4915999999999998s" />
+<rect x="306" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="323" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:1.5029s" />
+<rect x="323" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="323" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:1.5142s" />
+<rect x="323" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="323" y="34" width="14" height="14" fill="#ff6e96" style="animation-delay:1.5254999999999999s" />
+<rect x="323" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="323" y="51" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.5368s" />
+<rect x="323" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="323" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="323" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:1.5480999999999998s" />
+<rect x="323" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="323" y="85" width="14" height="14" fill="#ff6e96" style="animation-delay:1.5594s" />
+<rect x="323" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="323" y="102" width="14" height="14" fill="#ff6e96" style="animation-delay:1.5707s" />
+<rect x="323" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="340" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:1.5819999999999999s" />
+<rect x="340" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="340" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:1.5933s" />
+<rect x="340" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="340" y="34" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.6045999999999998s" />
+<rect x="340" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="340" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:1.6159s" />
+<rect x="340" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="340" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="340" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:1.6272s" />
+<rect x="340" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="340" y="85" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.6384999999999998s" />
+<rect x="340" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="340" y="102" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.6498s" />
+<rect x="340" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="357" y="0" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.6610999999999998s" />
+<rect x="357" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="357" y="17" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.6723999999999999s" />
+<rect x="357" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="357" y="34" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.6837s" />
+<rect x="357" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="357" y="51" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:1.6949999999999998s" />
+<rect x="357" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="357" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="357" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:1.7063s" />
+<rect x="357" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="357" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:1.7175999999999998s" />
+<rect x="357" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="357" y="102" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.7288999999999999s" />
+<rect x="357" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="374" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:1.7402s" />
+<rect x="374" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="374" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:1.7514999999999998s" />
+<rect x="374" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="374" y="34" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:1.7628s" />
+<rect x="374" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="374" y="51" width="14" height="14" fill="#ff6e96" style="animation-delay:1.7740999999999998s" />
+<rect x="374" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="374" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:1.7853999999999999s" />
+<rect x="374" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="374" y="85" width="14" height="14" fill="#ff6e96" style="animation-delay:1.7967s" />
+<rect x="374" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="374" y="102" width="14" height="14" fill="#ff6e96" style="animation-delay:1.8079999999999998s" />
+<rect x="374" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="391" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:1.8193s" />
+<rect x="391" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="391" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:1.8305999999999998s" />
+<rect x="391" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="391" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="391" y="34" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.8418999999999999s" />
+<rect x="391" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="391" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="391" y="51" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:1.8532s" />
+<rect x="391" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="391" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="391" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:1.8644999999999998s" />
+<rect x="391" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="391" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="391" y="85" width="14" height="14" fill="#ff6e96" style="animation-delay:1.8758s" />
+<rect x="391" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="391" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="391" y="102" width="14" height="14" fill="#ff6e96" style="animation-delay:1.8870999999999998s" />
+<rect x="391" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="408" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:1.8983999999999999s" />
+<rect x="408" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="408" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:1.9097s" />
+<rect x="408" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="408" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="408" y="34" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:1.9209999999999998s" />
+<rect x="408" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="408" y="51" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:1.9323s" />
+<rect x="408" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="408" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:1.9435999999999998s" />
+<rect x="408" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="408" y="85" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.9548999999999999s" />
+<rect x="408" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="408" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="408" y="102" width="14" height="14" fill="#ff6e96" style="animation-delay:1.9662s" />
+<rect x="408" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="425" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:1.9774999999999998s" />
+<rect x="425" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="425" y="17" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:1.9888s" />
+<rect x="425" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="425" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="425" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.0000999999999998s" />
+<rect x="425" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="425" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="425" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.0114s" />
+<rect x="425" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="425" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="425" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:2.0227s" />
+<rect x="425" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="425" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:2.034s" />
+<rect x="425" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="425" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="425" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:2.0452999999999997s" />
+<rect x="425" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="442" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:2.0566s" />
+<rect x="442" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="442" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:2.0679s" />
+<rect x="442" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="442" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.0791999999999997s" />
+<rect x="442" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="442" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.0905s" />
+<rect x="442" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="442" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:2.1018s" />
+<rect x="442" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="442" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:2.1130999999999998s" />
+<rect x="442" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="442" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:2.1244s" />
+<rect x="442" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="459" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:2.1357s" />
+<rect x="459" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="459" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:2.147s" />
+<rect x="459" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="459" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="459" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.1582999999999997s" />
+<rect x="459" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="459" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="459" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.1696s" />
+<rect x="459" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="459" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="459" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:2.1809s" />
+<rect x="459" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="459" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="459" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:2.1921999999999997s" />
+<rect x="459" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="459" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="459" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:2.2035s" />
+<rect x="459" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="476" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:2.2148s" />
+<rect x="476" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="476" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:2.2260999999999997s" />
+<rect x="476" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="476" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="476" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.2374s" />
+<rect x="476" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="476" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.2487s" />
+<rect x="476" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="476" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:2.26s" />
+<rect x="476" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="476" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:2.2712999999999997s" />
+<rect x="476" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="476" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:2.2826s" />
+<rect x="476" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="493" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:2.2939s" />
+<rect x="493" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="493" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:2.3051999999999997s" />
+<rect x="493" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="493" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="493" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.3165s" />
+<rect x="493" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="493" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="493" y="51" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:2.3278s" />
+<rect x="493" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="493" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="493" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.3390999999999997s" />
+<rect x="493" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="493" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:2.3504s" />
+<rect x="493" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="493" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:2.3617s" />
+<rect x="493" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="510" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.3729999999999998s" />
+<rect x="510" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="510" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:2.3842999999999996s" />
+<rect x="510" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="510" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.3956s" />
+<rect x="510" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="510" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.4069s" />
+<rect x="510" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="510" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:2.4181999999999997s" />
+<rect x="510" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="510" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:2.4295s" />
+<rect x="510" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="510" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:2.4408s" />
+<rect x="510" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="527" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:2.4520999999999997s" />
+<rect x="527" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="527" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:2.4634s" />
+<rect x="527" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="527" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.4747s" />
+<rect x="527" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="527" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="527" y="51" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:2.4859999999999998s" />
+<rect x="527" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="527" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="527" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.4972999999999996s" />
+<rect x="527" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="527" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="527" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:2.5086s" />
+<rect x="527" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="527" y="102" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:2.5199s" />
+<rect x="527" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="544" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:2.5311999999999997s" />
+<rect x="544" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="544" y="17" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.5425s" />
+<rect x="544" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="544" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="544" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.5538s" />
+<rect x="544" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="544" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.5650999999999997s" />
+<rect x="544" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="544" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:2.5764s" />
+<rect x="544" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="544" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:2.5877s" />
+<rect x="544" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="544" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="544" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:2.5989999999999998s" />
+<rect x="544" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="561" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:2.6102999999999996s" />
+<rect x="561" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="561" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:2.6216s" />
+<rect x="561" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="561" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.6329s" />
+<rect x="561" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="561" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="561" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.6441999999999997s" />
+<rect x="561" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="561" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="561" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.6555s" />
+<rect x="561" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="561" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="561" y="85" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:2.6668s" />
+<rect x="561" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="561" y="102" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:2.6780999999999997s" />
+<rect x="561" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="578" y="0" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:2.6894s" />
+<rect x="578" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="578" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:2.7007s" />
+<rect x="578" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="578" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.7119999999999997s" />
+<rect x="578" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="578" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.7232999999999996s" />
+<rect x="578" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="578" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:2.7346s" />
+<rect x="578" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="578" y="85" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:2.7459s" />
+<rect x="578" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="578" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:2.7571999999999997s" />
+<rect x="578" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="595" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.7685s" />
+<rect x="595" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="595" y="17" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.7798s" />
+<rect x="595" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="595" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:2.7910999999999997s" />
+<rect x="595" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="595" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="595" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:2.8024s" />
+<rect x="595" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="595" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="595" y="68" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:2.8137s" />
+<rect x="595" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="595" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="595" y="85" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.8249999999999997s" />
+<rect x="595" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="595" y="102" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:2.8362999999999996s" />
+<rect x="595" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="612" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.8476s" />
+<rect x="612" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="612" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:2.8588999999999998s" />
+<rect x="612" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="612" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="612" y="34" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:2.8701999999999996s" />
+<rect x="612" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="612" y="51" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:2.8815s" />
+<rect x="612" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="612" y="68" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:2.8928s" />
+<rect x="612" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="612" y="85" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:2.9040999999999997s" />
+<rect x="612" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="612" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="612" y="102" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:2.9154s" />
+<rect x="612" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="629" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:2.9267s" />
+<rect x="629" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="629" y="17" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:2.9379999999999997s" />
+<rect x="629" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="629" y="34" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:2.9493s" />
+<rect x="629" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="629" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="629" y="51" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.9606s" />
+<rect x="629" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="629" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="629" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.9718999999999998s" />
+<rect x="629" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="629" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="629" y="85" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:2.9831999999999996s" />
+<rect x="629" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="629" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:2.9945s" />
+<rect x="629" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="646" y="0" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:3.0058s" />
+<rect x="646" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="646" y="17" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:3.0170999999999997s" />
+<rect x="646" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="646" y="34" width="14" height="14" fill="#ff6e96" style="animation-delay:3.0284s" />
+<rect x="646" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="646" y="51" width="14" height="14" fill="#ff6e96" style="animation-delay:3.0397s" />
+<rect x="646" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="646" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:3.0509999999999997s" />
+<rect x="646" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="646" y="85" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:3.0623s" />
+<rect x="646" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="646" y="102" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.0736s" />
+<rect x="646" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="663" y="0" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:3.0848999999999998s" />
+<rect x="663" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="663" y="17" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.0961999999999996s" />
+<rect x="663" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="663" y="17" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="663" y="34" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.1075s" />
+<rect x="663" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="663" y="34" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="663" y="51" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.1188s" />
+<rect x="663" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="663" y="51" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="663" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.1300999999999997s" />
+<rect x="663" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="663" y="68" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="663" y="85" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.1414s" />
+<rect x="663" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="663" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="663" y="102" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:3.1527s" />
+<rect x="663" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="680" y="0" width="14" height="14" fill="#ff6e96" style="animation-delay:3.1639999999999997s" />
+<rect x="680" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="680" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:3.1753s" />
+<rect x="680" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="680" y="34" width="14" height="14" fill="#ff6e96" style="animation-delay:3.1866s" />
+<rect x="680" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="680" y="51" width="14" height="14" fill="#ff6e96" style="animation-delay:3.1978999999999997s" />
+<rect x="680" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="680" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:3.2091999999999996s" />
+<rect x="680" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="680" y="85" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.2205s" />
+<rect x="680" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="680" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="680" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.2318s" />
+<rect x="680" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="697" y="0" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:3.2430999999999996s" />
+<rect x="697" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="697" y="17" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.2544s" />
+<rect x="697" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="697" y="34" width="14" height="14" fill="#ff6e96" style="animation-delay:3.2657s" />
+<rect x="697" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="697" y="51" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.2769999999999997s" />
+<rect x="697" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="697" y="68" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.2883s" />
+<rect x="697" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="697" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:3.2996s" />
+<rect x="697" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect x="697" y="85" width="14" height="14" fill="none" stroke="white" stroke-width="1.2"/>
+<rect class="cell" x="697" y="102" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.3108999999999997s" />
+<rect x="697" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="714" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:3.3221999999999996s" />
+<rect x="714" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="714" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:3.3335s" />
+<rect x="714" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="714" y="34" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.3447999999999998s" />
+<rect x="714" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="714" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:3.3560999999999996s" />
+<rect x="714" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="714" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:3.3674s" />
+<rect x="714" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="714" y="85" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.3787s" />
+<rect x="714" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="714" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:3.3899999999999997s" />
+<rect x="714" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="731" y="0" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:3.4013s" />
+<rect x="731" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="731" y="17" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.4126s" />
+<rect x="731" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="731" y="34" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.4238999999999997s" />
+<rect x="731" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="731" y="51" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:3.4351999999999996s" />
+<rect x="731" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="731" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:3.4465s" />
+<rect x="731" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="731" y="85" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:3.4577999999999998s" />
+<rect x="731" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="731" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.4690999999999996s" />
+<rect x="731" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="748" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.4804s" />
+<rect x="748" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="748" y="17" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.4917s" />
+<rect x="748" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="748" y="34" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.5029999999999997s" />
+<rect x="748" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="748" y="51" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.5143s" />
+<rect x="748" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="748" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.5256s" />
+<rect x="748" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="748" y="85" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:3.5368999999999997s" />
+<rect x="748" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="748" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.5481999999999996s" />
+<rect x="748" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="765" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.5595s" />
+<rect x="765" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="765" y="17" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.5707999999999998s" />
+<rect x="765" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="765" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:3.5820999999999996s" />
+<rect x="765" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="765" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:3.5934s" />
+<rect x="765" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="765" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.6047s" />
+<rect x="765" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="765" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:3.6159999999999997s" />
+<rect x="765" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="765" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.6273s" />
+<rect x="765" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="782" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:3.6386s" />
+<rect x="782" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="782" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.6498999999999997s" />
+<rect x="782" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="782" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:3.6611999999999996s" />
+<rect x="782" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="782" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:3.6725s" />
+<rect x="782" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="782" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:3.6837999999999997s" />
+<rect x="782" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="782" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:3.6950999999999996s" />
+<rect x="782" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="782" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:3.7064s" />
+<rect x="782" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="799" y="0" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.7177s" />
+<rect x="799" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="799" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:3.7289999999999996s" />
+<rect x="799" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="799" y="34" width="14" height="14" fill="rgba(255,110,150,0.55)" style="animation-delay:3.7403s" />
+<rect x="799" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="799" y="51" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.7516s" />
+<rect x="799" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="799" y="68" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.7628999999999997s" />
+<rect x="799" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="799" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:3.7741999999999996s" />
+<rect x="799" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="799" y="102" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.7855s" />
+<rect x="799" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="816" y="0" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.7967999999999997s" />
+<rect x="816" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="816" y="17" width="14" height="14" fill="#ff6e96" style="animation-delay:3.8080999999999996s" />
+<rect x="816" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="816" y="34" width="14" height="14" fill="#ff6e96" style="animation-delay:3.8194s" />
+<rect x="816" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="816" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:3.8306999999999998s" />
+<rect x="816" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="816" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:3.8419999999999996s" />
+<rect x="816" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="816" y="85" width="14" height="14" fill="rgba(255,110,150,0.35)" style="animation-delay:3.8533s" />
+<rect x="816" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="816" y="102" width="14" height="14" fill="rgba(255,110,150,0.75)" style="animation-delay:3.8646s" />
+<rect x="816" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="833" y="0" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.8758999999999997s" />
+<rect x="833" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="833" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:3.8871999999999995s" />
+<rect x="833" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="833" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:3.8985s" />
+<rect x="833" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="833" y="51" width="14" height="14" fill="#ff6e96" style="animation-delay:3.9097999999999997s" />
+<rect x="833" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="833" y="68" width="14" height="14" fill="#ff6e96" style="animation-delay:3.9210999999999996s" />
+<rect x="833" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="833" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:3.9324s" />
+<rect x="833" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="833" y="102" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.9436999999999998s" />
+<rect x="833" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="850" y="0" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.9549999999999996s" />
+<rect x="850" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="850" y="17" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:3.9663s" />
+<rect x="850" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="850" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:3.9776s" />
+<rect x="850" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="850" y="51" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:3.9888999999999997s" />
+<rect x="850" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="850" y="68" width="14" height="14" fill="rgba(255,110,150,0.22)" style="animation-delay:4.0001999999999995s" />
+<rect x="850" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="850" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:4.0115s" />
+<rect x="850" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="850" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:4.0228s" />
+<rect x="850" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="867" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:4.0341s" />
+<rect x="867" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="867" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:4.0454s" />
+<rect x="867" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="867" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:4.056699999999999s" />
+<rect x="867" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="867" y="51" width="14" height="14" fill="rgba(255,110,150,0.15)" style="animation-delay:4.068s" />
+<rect x="867" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="867" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:4.0793s" />
+<rect x="867" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="867" y="85" width="14" height="14" fill="#0d1117" style="animation-delay:4.090599999999999s" />
+<rect x="867" y="85" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="867" y="102" width="14" height="14" fill="#0d1117" style="animation-delay:4.1019s" />
+<rect x="867" y="102" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="884" y="0" width="14" height="14" fill="#0d1117" style="animation-delay:4.1132s" />
+<rect x="884" y="0" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="884" y="17" width="14" height="14" fill="#0d1117" style="animation-delay:4.124499999999999s" />
+<rect x="884" y="17" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="884" y="34" width="14" height="14" fill="#0d1117" style="animation-delay:4.1358s" />
+<rect x="884" y="34" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="884" y="51" width="14" height="14" fill="#0d1117" style="animation-delay:4.1471s" />
+<rect x="884" y="51" width="14" height="14" fill="url(#pixelGrid)" />
+<rect class="cell" x="884" y="68" width="14" height="14" fill="#0d1117" style="animation-delay:4.158399999999999s" />
+<rect x="884" y="68" width="14" height="14" fill="url(#pixelGrid)" />
+</svg>
