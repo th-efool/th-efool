@@ -76,7 +76,6 @@
 
 ### 🎞️ Graphics APIs
 <img src="https://i0.wp.com/howtocheckversion.com/wp-content/uploads/2023/09/1.png?ssl=1" height="40" alt="DirectX"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Vulkan_API_logo.svg" height="40" alt="Vulkan"/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/OpenGL_logo.svg" height="40" alt="OpenGL"/>
 
 ### 🧪 Data & AI
