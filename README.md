@@ -27,35 +27,64 @@ Building interactive systems at the intersection of **C++, graphics, XR, and the
 
 ## What I work on
 
-**01 — SYSTEMS & GRAPHICS**
+<table>
+<tr>
+<td width="50%" valign="top">
 
-Rendering pipelines, shaders, graphics APIs, and performance-focused C++.
+<img src="https://skillicons.dev/icons?i=cpp,opengl&theme=dark" height="48" alt="C++ and OpenGL" />
+
+<sub><b>01 / SYSTEMS & GRAPHICS</b></sub>
+
+### Rendering, down to the metal
+
+Shaders, rendering pipelines, graphics APIs, and performance-focused C++.
 
 `C++` &nbsp; `HLSL` &nbsp; `OpenGL`
 
----
+</td>
+<td width="50%" valign="top">
 
-**02 — XR & SPATIAL COMPUTING**
+<img src="https://skillicons.dev/icons?i=unreal,unity&theme=dark" height="48" alt="Unreal Engine and Unity" />
 
-Immersive interfaces, spatial interaction, and digital twins that connect software with the physical world.
+<sub><b>02 / XR & SPATIAL COMPUTING</b></sub>
+
+### Software in real space
+
+Immersive interfaces, spatial interaction, and digital twins bridging virtual and physical systems.
 
 `XR` &nbsp; `OpenXR` &nbsp; `Digital Twins`
 
----
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
-**03 — REAL-TIME WORLDS**
+<img src="https://skillicons.dev/icons?i=unreal,cpp&theme=dark" height="48" alt="Unreal Engine and C++" />
 
-Gameplay systems, multiplayer architecture, and tools for responsive interactive experiences.
+<sub><b>03 / REAL-TIME WORLDS</b></sub>
+
+### Systems that respond
+
+Gameplay architecture, multiplayer systems, and tools for interactive real-time experiences.
 
 `Multiplayer` &nbsp; `Gameplay` &nbsp; `Real-time`
 
----
+</td>
+<td width="50%" valign="top">
 
-**04 — PRODUCT ENGINEERING**
+<img src="https://skillicons.dev/icons?i=ts,react&theme=dark" height="48" alt="TypeScript and React" />
 
-Full-stack software, developer tools, and interfaces designed to make useful ideas real.
+<sub><b>04 / PRODUCT ENGINEERING</b></sub>
+
+### From idea to interface
+
+Full-stack products, developer tools, and thoughtful interfaces built to solve real problems.
 
 `TypeScript` &nbsp; `React` &nbsp; `Full-stack`
+
+</td>
+</tr>
+</table>
 
 ## Technology map
 
