@@ -27,52 +27,35 @@ Building interactive systems at the intersection of **C++, graphics, XR, and the
 
 ## What I work on
 
-<table border="0" cellpadding="12" cellspacing="0">
-<tr>
-<td width="50%" valign="top">
+**01 — SYSTEMS & GRAPHICS**
 
-<sub>01 / SYSTEMS</sub>
+Rendering pipelines, shaders, graphics APIs, and performance-focused C++.
 
-### ⚙️ Systems & Graphics
-Building close to the metal: rendering pipelines, shaders, graphics APIs, and performance-focused C++.
+`C++` &nbsp; `HLSL` &nbsp; `OpenGL`
 
-<sub><code>C++</code> · <code>HLSL</code> · <code>OpenGL</code></sub>
+---
 
-</td>
-<td width="50%" valign="top">
+**02 — XR & SPATIAL COMPUTING**
 
-<sub>02 / SPATIAL</sub>
+Immersive interfaces, spatial interaction, and digital twins that connect software with the physical world.
 
-### 🥽 XR & Spatial Computing
-Making digital systems tangible through immersive interfaces, spatial interaction, and digital twins.
+`XR` &nbsp; `OpenXR` &nbsp; `Digital Twins`
 
-<sub><code>XR</code> · <code>OpenXR</code> · <code>Digital Twins</code></sub>
+---
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+**03 — REAL-TIME WORLDS**
 
-<sub>03 / REAL-TIME</sub>
+Gameplay systems, multiplayer architecture, and tools for responsive interactive experiences.
 
-### 🎮 Interactive Worlds
-Gameplay systems, multiplayer architecture, and tools for responsive real-time experiences.
+`Multiplayer` &nbsp; `Gameplay` &nbsp; `Real-time`
 
-<sub><code>Multiplayer</code> · <code>Gameplay</code> · <code>Real-time</code></sub>
+---
 
-</td>
-<td width="50%" valign="top">
+**04 — PRODUCT ENGINEERING**
 
-<sub>04 / PRODUCT</sub>
+Full-stack software, developer tools, and interfaces designed to make useful ideas real.
 
-### 🌐 Product Engineering
-Turning ideas into usable software with full-stack development, developer tools, and considered interfaces.
-
-<sub><code>TypeScript</code> · <code>React</code> · <code>Full-stack</code></sub>
-
-</td>
-</tr>
-</table>
+`TypeScript` &nbsp; `React` &nbsp; `Full-stack`
 
 ## Technology map
 
