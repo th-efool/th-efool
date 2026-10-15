@@ -31,56 +31,48 @@ Building interactive systems at the intersection of **C++, graphics, XR, and the
 <tr>
 <td width="50%" valign="top">
 
-<img src="https://skillicons.dev/icons?i=cpp,opengl&theme=dark" height="48" alt="C++ and OpenGL" />
+<img src="https://api.iconify.design/ph/circles-four.svg?color=%23ff79c6" width="34" height="34" alt="Abstract four-circle icon" />
 
-<sub><b>01 / SYSTEMS & GRAPHICS</b></sub>
+### Systems & Graphics
 
-### Rendering, down to the metal
+Rendering, shaders, graphics APIs, and C++.
 
-Shaders, rendering pipelines, graphics APIs, and performance-focused C++.
-
-`C++` &nbsp; `HLSL` &nbsp; `OpenGL`
+<sub>`C++` · `HLSL` · `OpenGL`</sub>
 
 </td>
 <td width="50%" valign="top">
 
-<img src="https://skillicons.dev/icons?i=unreal,unity&theme=dark" height="48" alt="Unreal Engine and Unity" />
+<img src="https://api.iconify.design/ph/orbit.svg?color=%238be9fd" width="34" height="34" alt="Abstract orbit icon" />
 
-<sub><b>02 / XR & SPATIAL COMPUTING</b></sub>
+### XR & Spatial Computing
 
-### Software in real space
+Spatial interfaces, immersive systems, and digital twins.
 
-Immersive interfaces, spatial interaction, and digital twins bridging virtual and physical systems.
-
-`XR` &nbsp; `OpenXR` &nbsp; `Digital Twins`
+<sub>`XR` · `OpenXR` · `Digital Twins`</sub>
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-<img src="https://skillicons.dev/icons?i=unreal,cpp&theme=dark" height="48" alt="Unreal Engine and C++" />
+<img src="https://api.iconify.design/ph/waveform.svg?color=%23bd93f9" width="34" height="34" alt="Abstract waveform icon" />
 
-<sub><b>03 / REAL-TIME WORLDS</b></sub>
+### Real-Time Development
 
-### Systems that respond
+Gameplay systems, multiplayer architecture, and interactive tools.
 
-Gameplay architecture, multiplayer systems, and tools for interactive real-time experiences.
-
-`Multiplayer` &nbsp; `Gameplay` &nbsp; `Real-time`
+<sub>`Multiplayer` · `Gameplay` · `Real-time`</sub>
 
 </td>
 <td width="50%" valign="top">
 
-<img src="https://skillicons.dev/icons?i=ts,react&theme=dark" height="48" alt="TypeScript and React" />
+<img src="https://api.iconify.design/ph/asterisk-simple.svg?color=%23ffb86c" width="34" height="34" alt="Abstract asterisk icon" />
 
-<sub><b>04 / PRODUCT ENGINEERING</b></sub>
+### Product Engineering
 
-### From idea to interface
+Full-stack applications, developer tools, and interface design.
 
-Full-stack products, developer tools, and thoughtful interfaces built to solve real problems.
-
-`TypeScript` &nbsp; `React` &nbsp; `Full-stack`
+<sub>`TypeScript` · `React` · `Full-stack`</sub>
 
 </td>
 </tr>
