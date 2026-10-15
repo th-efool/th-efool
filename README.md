@@ -91,11 +91,11 @@ Full-stack applications, developer tools, thoughtful interface design, and exper
 
 <br/>
 
-<img src="https://nirzak-streak-stats.vercel.app/?user=th-efool&theme=dracula&hide_border=true&background=282a36&ring=ff79c6&fire=ffb86c&currStreakLabel=8be9fd" height="180" alt="GitHub contribution streak" />
+<img src="https://streak-stats.demolab.com/?user=th-efool&theme=dracula&hide_border=true&background=282a36&ring=ff79c6&fire=ffb86c&currStreakLabel=8be9fd" height="180" alt="GitHub contribution streak" />
 
 <br/>
 
-<img src="https://github-profile-trophy.vercel.app/?username=th-efool&theme=dracula&no-frame=true&no-bg=true&margin-w=8&row=1&column=6" width="100%" alt="GitHub profile trophies" />
+<p><a href="https://github.com/th-efool?tab=achievements">View GitHub achievements</a> · <a href="https://github.com/th-efool?tab=repositories">Explore repositories</a></p>
 
 </div>
 
@@ -103,9 +103,10 @@ Full-stack applications, developer tools, thoughtful interface design, and exper
 
 <div align="center">
 
-<a href="https://github.com/th-efool?tab=repositories">
-  <img src="https://github-contributor-stats.vercel.app/api?username=th-efool&limit=5&theme=dracula&combine_all_yearly_contributions=true" width="90%" alt="Repositories with the most contributions" />
-</a>
+<p>Explore the projects I build and contribute to:</p>
+
+<a href="https://github.com/th-efool?tab=repositories"><img src="https://img.shields.io/badge/All_Repositories-282a36?style=for-the-badge&logo=github&logoColor=ff79c6" alt="All repositories" /></a>
+<a href="https://github.com/th-efool?tab=stars"><img src="https://img.shields.io/badge/Starred_Projects-282a36?style=for-the-badge&logo=github&logoColor=8be9fd" alt="Starred projects" /></a>
 
 </div>
 
