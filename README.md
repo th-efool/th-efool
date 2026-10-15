@@ -29,22 +29,22 @@ Building interactive systems at the intersection of **C++, graphics, XR, and the
 
 <table>
 <tr>
-<td width="50%" valign="top" style="padding:20px 22px;">
+<td width="50%" valign="top">
 
-<img src="https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/circles-four.svg" width="32" height="32" alt="Four-circle abstract icon" />
+<img src="https://api.iconify.design/ph/circles-four.svg?color=%23ff79c6" width="28" height="28" alt="Four-circle abstract icon" />
 
-### Systems & Graphics
+**Systems & Graphics**
 
 Rendering, shaders, graphics APIs, and C++.
 
 <sub>`C++` · `HLSL` · `OpenGL`</sub>
 
 </td>
-<td width="50%" valign="top" style="padding:20px 22px;">
+<td width="50%" valign="top">
 
-<img src="https://api.iconify.design/solar/planet-2-linear.svg?color=%238be9fd" width="32" height="32" alt="Abstract planet orbit icon" />
+<img src="https://api.iconify.design/solar/planet-2-linear.svg?color=%238be9fd" width="28" height="28" alt="Abstract planet icon" />
 
-### XR & Spatial Computing
+**XR & Spatial Computing**
 
 Spatial interfaces, immersive systems, and digital twins.
 
@@ -53,22 +53,22 @@ Spatial interfaces, immersive systems, and digital twins.
 </td>
 </tr>
 <tr>
-<td width="50%" valign="top" style="padding:20px 22px;">
+<td width="50%" valign="top">
 
-<img src="https://api.iconify.design/ph/waveform.svg?color=%23bd93f9" width="32" height="32" alt="Abstract waveform icon" />
+<img src="https://api.iconify.design/ph/waveform.svg?color=%23bd93f9" width="28" height="28" alt="Abstract waveform icon" />
 
-### Real-Time Development
+**Real-Time Development**
 
 Gameplay systems, multiplayer architecture, and interactive tools.
 
 <sub>`Multiplayer` · `Gameplay` · `Real-time`</sub>
 
 </td>
-<td width="50%" valign="top" style="padding:20px 22px;">
+<td width="50%" valign="top">
 
-<img src="https://api.iconify.design/ph/asterisk-simple.svg?color=%23ffb86c" width="32" height="32" alt="Abstract asterisk icon" />
+<img src="https://api.iconify.design/ph/asterisk-simple.svg?color=%23ffb86c" width="28" height="28" alt="Abstract asterisk icon" />
 
-### Product Engineering
+**Product Engineering**
 
 Full-stack applications, developer tools, and interface design.
 
