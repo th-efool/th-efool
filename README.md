@@ -1,128 +1,120 @@
-<img src="https://visitor-badge.laobi.icu/badge?page_id=th-efool.th-efool" alt="visitors" align="right"/>
-
-
-<div align="center" style="background-color:#282a36;>
-<div align="center" style="background-color:#282a36; color:#e6edf3; padding:30px; border-radius:8px;">
-
-<!-- Snake animation -->
-<picture>
-  <source
-    media="(min-width: 500px) and (pointer: fine)"
-    srcset="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg"
-  />
-  <img
-    src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula-mobile.svg"
-    width="100%"
-    loading="lazy"
-    decoding="async"
-    style="display:block;"
-  />
-</picture>
-
-
-###
-<div align="center">
-  
-  ![](https://nirzak-streak-stats.vercel.app/?user=th-efool&theme=dracula&hide_border=false)<br/>
-  <img src="https://github-profile-trophy.vercel.app?username=th-efool&theme=dracula&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=false&order=4" height="150" alt="trophy graph"  />
-</div>
-
-## 🌐 Socials
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/agrimsinghx)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/agrimsinghx)
-[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discordapp.com/users/514834597704368128)
-[![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?logo=Pinterest&logoColor=white)](https://pinterest.com/th_efool)
-[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:agrim_s@cy.iitr.ac.in)
-[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/agrimsingh001)
-
-## 💻 Tech Stack
 <div align="center">
 
-### 🧠 Languages
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="40"/> 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" height="40"/>
+<img src="https://visitor-badge.laobi.icu/badge?page_id=th-efool.th-efool&left_color=282a36&right_color=ff79c6" alt="Profile visitors" />
 
-### ⚙️ Frameworks & Libraries
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![p5.js](https://img.shields.io/badge/p5.js-ED225D?style=for-the-badge&logo=p5.js&logoColor=FFFFFF)
-![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![CUDA](https://img.shields.io/badge/cuda-000000.svg?style=for-the-badge&logo=nVIDIA&logoColor=green)
-![Drizzle](https://img.shields.io/badge/Drizzle-000000?style=for-the-badge&logo=drizzle&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+# Agrim Singh
+### Low-Level Developer · XR & Real-Time Graphics · Creative Technologist
 
+Building interactive systems at the intersection of **C++, graphics, XR, and the web**.
 
-### 🧰 Tools & Platforms
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="40" alt="WinAPI (Windows)"/>
+<a href="https://agrimsinghx.vercel.app"><img src="https://img.shields.io/badge/Portfolio-FF79C6?style=for-the-badge&logo=vercel&logoColor=282a36" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/agrimsinghx"><img src="https://img.shields.io/badge/LinkedIn-8BE9FD?style=for-the-badge&logo=linkedin&logoColor=282a36" alt="LinkedIn" /></a>
+<a href="mailto:agrim_s@cy.iitr.ac.in"><img src="https://img.shields.io/badge/Email-BD93F9?style=for-the-badge&logo=gmail&logoColor=282a36" alt="Email" /></a>
+<a href="https://github.com/th-efool?tab=repositories"><img src="https://img.shields.io/badge/Explore_Projects-50FA7B?style=for-the-badge&logo=github&logoColor=282a36" alt="Projects" /></a>
 
-### 🎞️ Graphics APIs
-<img src="https://i0.wp.com/howtocheckversion.com/wp-content/uploads/2023/09/1.png?ssl=1" height="40" alt="DirectX"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/OpenGL_logo.svg" height="40" alt="OpenGL"/>
+</div>
 
-### 🧪 Data & AI
-![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
-![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white)
-![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" height="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" height="40"/>
+---
 
-### 🎨 Design & Media
+## The contribution pulse
+
 <div align="center">
 
-<!-- Adobe Suite -->
-![Figma](https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-![Adobe Photoshop](https://img.shields.io/badge/Adobe%20Photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white)
-![Adobe Illustrator](https://img.shields.io/badge/Adobe%20Illustrator-%23FF9A00.svg?style=for-the-badge&logo=adobeillustrator&logoColor=white)
-![Adobe InDesign](https://img.shields.io/badge/Adobe%20InDesign-%23FF3366.svg?style=for-the-badge&logo=adobeindesign&logoColor=white)
-![Adobe Premiere Pro](https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white)
-</div>
-
+<!-- Generated by the profile-art workflow in this repository. -->
+<img src="https://raw.githubusercontent.com/th-efool/th-efool/dracula-pulse-art/heartbeat-dracula.svg" width="100%" alt="Animated GitHub contribution graph in Dracula colors" />
 
 </div>
 
-## 📊 GitHub Stats
+## What I work on
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### ⚙️ Systems & Graphics
+C++, real-time rendering, shader programming, graphics APIs, performance-minded implementation, and understanding what sits beneath abstractions.
+
+</td>
+<td width="50%" valign="top">
+
+### 🥽 XR & Spatial Computing
+Interactive XR experiences, digital twins, immersive interfaces, and prototypes that connect virtual systems with the physical world.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🎮 Real-Time Experiences
+Gameplay systems, multiplayer architecture, tools, and interactive worlds built with modern real-time engines.
+
+</td>
+<td width="50%" valign="top">
+
+### 🌐 Product Engineering
+Full-stack applications, developer tools, thoughtful interface design, and experiments that turn ideas into working software.
+
+</td>
+</tr>
+</table>
+
+## Technology map
+
 <div align="center">
 
-<div style="display:flex; gap:10px;">
-  <img height="158em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=th-efool&theme=dracula">
-<img height="158em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=th-efool&theme=dracula">
-<img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=th-efool&theme=dracula">
-<img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=th-efool&theme=dracula">
-<img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=th-efool&theme=dracula&utcOffset=8">
-  <img src="https://github-readme-stats.vercel.app/api?username=th-efool&theme=dracula&hide_border=true&count_private=true&border_radius=0" height="160" style="border:none;"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=th-efool&theme=dracula&hide_border=true&layout=compact&border_radius=0" height="160" style="border:none;"/>
-</div>
+### Languages
+<img src="https://skillicons.dev/icons?i=cpp,c,cs,python,js,ts,rust,html,css&theme=dark" alt="C++, C, C sharp, Python, JavaScript, TypeScript, Rust, HTML and CSS" />
+
+### Engines, frameworks & data
+<img src="https://skillicons.dev/icons?i=unreal,unity,react,nextjs,nodejs,express,redux,postgres,mongodb,supabase,sqlite&theme=dark" alt="Unreal Engine, Unity, React, Next.js, Node.js, Express, Redux, PostgreSQL, MongoDB, Supabase and SQLite" />
+
+### Graphics, infrastructure & creative tools
+<img src="https://skillicons.dev/icons?i=opengl,threejs,docker,git,github,githubactions,cmake,linux,windows,figma,ps,ai&theme=dark" alt="OpenGL, Three.js, Docker, Git, GitHub, GitHub Actions, CMake, Linux, Windows, Figma and Adobe tools" />
+
+### Data & machine learning
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv&theme=dark" alt="PyTorch, TensorFlow and OpenCV" />
 
 </div>
 
+---
 
-### 🔝 Top Contributed Repo
-<img src="https://github-contributor-stats.vercel.app/api?username=th-efool&limit=5&theme=dark&combine_all_yearly_contributions=true" />
+## GitHub, in signals
+
+<div align="center">
+
+<a href="https://github.com/th-efool">
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=th-efool&show_icons=true&hide_border=true&bg_color=282a36&title_color=ff79c6&icon_color=8be9fd&text_color=f8f8f2&rank_icon=github" alt="GitHub profile stats" />
+</a>
+<a href="https://github.com/th-efool">
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=th-efool&layout=compact&hide_border=true&bg_color=282a36&title_color=ff79c6&text_color=f8f8f2" alt="Most used languages" />
+</a>
 
 <br/>
 
-<img src="https://visitcount.itsvg.in/api?id=th-efool&icon=0&color=0"/>
+<img src="https://nirzak-streak-stats.vercel.app/?user=th-efool&theme=dracula&hide_border=true&background=282a36&ring=ff79c6&fire=ffb86c&currStreakLabel=8be9fd" height="180" alt="GitHub contribution streak" />
+
+<br/>
+
+<img src="https://github-profile-trophy.vercel.app/?username=th-efool&theme=dracula&no-frame=true&no-bg=true&margin-w=8&row=1&column=6" width="100%" alt="GitHub profile trophies" />
 
 </div>
+
+## Contribution footprint
+
+<div align="center">
+
+<a href="https://github.com/th-efool?tab=repositories">
+  <img src="https://github-contributor-stats.vercel.app/api?username=th-efool&limit=5&theme=dracula&combine_all_yearly_contributions=true" width="90%" alt="Repositories with the most contributions" />
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
+**Curiosity in. Systems out.**
+
+<sub>Designed with a Dracula palette · Built in public · Always learning by making</sub>
+
 </div>
